@@ -22,6 +22,7 @@ export default function Page() {
         <>
             {/* === HERO SECTION === */}
             <section className="relative flex flex-col items-center justify-center gap-4 py-8  md:py-12">
+                <Meteors className="opacity-[0.2]" />
                 {/* === Background khusus Hero === */}
                 <div className="absolute inset-0 ">
                     {/* atau pakai gambar */}
@@ -30,10 +31,12 @@ export default function Page() {
 
                 {/* === Hero Content === */}
                 <div className={cn("group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800")}>
-                    <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                        <span>✨ Welcome to Parzello Tech</span>
-                        <ArrowRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-                    </AnimatedShinyText>
+                    <MagicCard className="rounded-xl  backdrop-blur-xl cursor-pointer group" gradientColor={"#ffffff"} gradientOpacity={0.1} gradientFrom={"#ffffff76"} gradientTo={"#ffffff76"}>
+                        <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                            <span>✨ Welcome to Parzello Tech</span>
+                            <ArrowRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+                        </AnimatedShinyText>
+                    </MagicCard>
                 </div>
 
                 <div className="inline-block max-w-xl text-center justify-center">
@@ -60,38 +63,45 @@ export default function Page() {
 
                 <div className="my-5"></div>
 
-                <MagicCard
-                    className="rounded-xl  bg-transparent
-             backdrop-blur-xl cursor-pointer"
-                >
+                <MagicCard className="rounded-xl bg-transparent backdrop-blur-xl cursor-pointer group" gradientColor={"#6600ffff"} gradientOpacity={0.1}>
                     <div className="p-3">
                         <Card
                             className="p-1 rounded-2xl 
-             bg-gradient-to-br from-white/10 to-white/5 
-             dark:from-white/5 dark:to-black/10 
-             backdrop-blur-xl 
-             shadow-xl flex items-center justify-center"
+      bg-gradient-to-br from-white/10 to-white/5 
+      dark:from-white/5 dark:to-black/10 
+      backdrop-blur-xl 
+      shadow-xl flex items-center justify-center
+      transition-transform duration-300 group-hover:scale-105"
                         >
-                            <ParzelloLogo size={70} className="relative z-10" />
+                            <ParzelloLogo size={70} className="relative z-10 transition-transform duration-300 group-hover:scale-110" />
                         </Card>
                     </div>
                 </MagicCard>
-                <Meteors className="opacity-[0.2]" />
             </section>
 
             <TechMarquee />
 
-            <div className="my-8">
-                <ParzelloBeams />
-            </div>
-
-            <div className="relative flex flex-col items-center justify-center gap-4 py-8  md:py-12">
-                <div className="absolute inset-1 ">
-                    <div className="h-full w-full bg-[url('/images/bg2.png')] bg-cover bg-bottom opacity-20 backdrop-blur-md" />
+            <div className="relative">
+                <br />
+                <br />
+                {/* === GLOBAL BACKGROUND === */}
+                <div className="absolute inset-0">
+                    <div className="h-full w-full bg-[url('/images/bg_main.png')] bg-cover bg-bottom opacity-20 backdrop-blur-md" />
                 </div>
 
-                {/* === ABOUT US SECTION === */}
-                <SectionAboutUs />
+                {/* === CONTENT WRAPPER === */}
+                <div className="relative">
+                    <section className="my-8">
+                        <ParzelloBeams />
+                    </section>
+
+                    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-12">
+                        <SectionAboutUs />
+                    </section>
+
+                    {/* === SECTION LANJUTAN DI SINI === */}
+                    <section className="py-8 md:py-12">{/* isi lain */}</section>
+                </div>
             </div>
         </>
     );

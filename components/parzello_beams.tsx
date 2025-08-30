@@ -27,33 +27,33 @@ export function ParzelloBeams() {
     const div7Ref = useRef<HTMLDivElement>(null);
 
     return (
-        <div className="relative flex h-[300px] w-full items-center justify-center overflow-hidden p-10" ref={containerRef}>
-            <div className="flex size-full max-h-[200px] max-w-lg flex-col items-stretch justify-between gap-10">
+        <div className="relative flex  w-full items-center justify-center overflow-hidden p-10" ref={containerRef}>
+            <div className="flex size-full  max-w-lg flex-col items-stretch justify-between gap-10">
                 <div className="flex flex-row items-center justify-between ">
-                    <Circle ref={div1Ref}>
+                    <Circle ref={div1Ref} className="size-16 bg-black">
                         <Icons.googleDrive />
                     </Circle>
-                    <Circle ref={div5Ref}>
+                    <Circle ref={div5Ref} className="size-16 bg-black">
                         <Icons.googleDocs />
                     </Circle>
                 </div>
                 <div className="flex flex-row items-center justify-between ">
-                    <Circle ref={div2Ref}>
+                    <Circle ref={div2Ref} className="size-16 bg-black">
                         <Icons.notion />
                     </Circle>
-                    <Circle ref={div4Ref} className="size-16">
+                    <Circle ref={div4Ref} className="size-20 bg-black">
                         {/* <Icons.openai /> */}
                         <ParzelloLogo size={120} />
                     </Circle>
-                    <Circle ref={div6Ref}>
+                    <Circle ref={div6Ref} className="size-16 bg-black">
                         <Icons.zapier />
                     </Circle>
                 </div>
                 <div className="flex flex-row items-center justify-between ">
-                    <Circle ref={div3Ref}>
+                    <Circle ref={div3Ref} className="size-16 bg-black">
                         <Icons.whatsapp />
                     </Circle>
-                    <Circle ref={div7Ref}>
+                    <Circle ref={div7Ref} className="size-16 bg-black">
                         <Icons.messenger />
                     </Circle>
                 </div>

@@ -12,7 +12,7 @@ const techs = [
 
 export default function TechMarquee() {
     return (
-        <div className="space-y-1">
+        <div className="space-y-1 ">
             <div className="opacity-40">
                 <Marquee repeat={5}>
                     {techs.map((tech, i) => (
