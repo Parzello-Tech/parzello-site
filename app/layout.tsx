@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         <Navbar />
 
                         {/* Konten utama */}
-                        <main className="flex-1 overflow-x-hidden">{children}</main>
+                        <main className="flex-1 overflow-x-hidden bg-[#0A090D]">{children}</main>
 
                         {/* Footer */}
                         <footer className="w-full flex items-center justify-center py-6 border-t border-white/10">

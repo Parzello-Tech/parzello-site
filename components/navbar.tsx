@@ -12,7 +12,9 @@ import { ThemeSwitch } from "@/components/theme-switch";
 import { TwitterIcon, GithubIcon, DiscordIcon, HeartFilledIcon, SearchIcon, Logo } from "@/components/icons";
 
 import { FaInstagram } from "react-icons/fa";
+import { SiGoogleplay } from "react-icons/si";
 import ParzelloLogo from "./parzello_logo";
+import { Divider } from "@heroui/react";
 
 export const Navbar = () => {
     const searchInput = (
@@ -57,22 +59,29 @@ export const Navbar = () => {
 
             <NavbarContent className="hidden sm:flex basis-1/5 sm:basis-full" justify="end">
                 <NavbarItem className="hidden sm:flex gap-2">
-                    <Link href={siteConfig.links.instagram} aria-label="Instagram" target="_blank" rel="noreferrer">
-                        <FaInstagram className="text-default-500 w-5 h-5" />
+                    <Link href={siteConfig.links.playstore} aria-label="Playstore" target="_blank" rel="noreferrer">
+                        <SiGoogleplay className="text-default-500 w-5 h-5" />
                     </Link>
                     <Link isExternal aria-label="Github" href={siteConfig.links.github}>
                         <GithubIcon className="text-default-500" />
                     </Link>
+                    <Link href={siteConfig.links.instagram} aria-label="Instagram" target="_blank" rel="noreferrer">
+                        <FaInstagram className="text-default-500 w-5 h-5" />
+                    </Link>
+                    <Divider orientation="vertical" className="text-white" />
                     <ThemeSwitch />
                 </NavbarItem>
             </NavbarContent>
 
             <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-                <Link href={siteConfig.links.instagram} aria-label="Instagram" target="_blank" rel="noreferrer">
-                    <FaInstagram className="text-default-500 w-5 h-5" />
+                <Link href={siteConfig.links.playstore} aria-label="Playstore" target="_blank" rel="noreferrer">
+                    <SiGoogleplay className="text-default-500 w-5 h-5" />
                 </Link>
                 <Link isExternal aria-label="Github" href={siteConfig.links.github}>
                     <GithubIcon className="text-default-500" />
+                </Link>
+                <Link href={siteConfig.links.instagram} aria-label="Instagram" target="_blank" rel="noreferrer">
+                    <FaInstagram className="text-default-500 w-5 h-5" />
                 </Link>
                 <ThemeSwitch />
                 <NavbarMenuToggle />

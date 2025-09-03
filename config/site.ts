@@ -62,9 +62,8 @@ export const siteConfig = {
     links: {
         github: "https://github.com/Parzello-Tech",
         instagram: "https://www.instagram.com/parzello.tech",
-        twitter: "https://twitter.com/hero_ui",
+        linkedin: "https://www.linkedin.com/company/parzello-tech/",
+        playstore: "https://play.google.com/store/apps/dev?id=4649613366869532977",
         docs: "https://heroui.com",
-        discord: "https://discord.gg/9b6yyZKmH4",
-        sponsor: "https://patreon.com/jrgarciadev",
     },
 };

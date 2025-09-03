@@ -8,18 +8,21 @@ import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 import { cn } from "@/lib/utils";
 import ParzelloLogo from "@/components/parzello_logo";
 
-import { ArrowRight, Mail, Phone } from "lucide-react";
 import { Button, Card, CardBody, CardFooter, CardHeader } from "@heroui/react";
 
 import { MagicCard } from "@/components/magicui/magic-card";
 import TechMarquee from "@/components/my_marquee";
 import SectionAboutUs from "./section";
 
-import { ProgressiveBlur } from "@/components/magicui/progressive-blur";
 import { ParzelloBeams } from "@/components/parzello_beams";
 import { Meteors } from "@/components/magicui/meteors";
 
 import { IconWorld, IconDeviceMobile, IconSettings, IconBrush } from "@tabler/icons-react";
+import { ShinyButton } from "@/components/magicui/shiny-button";
+
+import { Github, Instagram, Linkedin, ArrowRight, Mail, Phone } from "lucide-react";
+import { siteConfig } from "@/config/site";
+import { SiGoogleplay } from "react-icons/si";
 
 export default function Page() {
     return (
@@ -70,7 +73,7 @@ export default function Page() {
                         })}
                         href="#"
                     >
-                        Follow our Journey
+                        Explore Our Apps <ArrowRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
                     </Link>
                 </div>
 
@@ -229,7 +232,7 @@ export default function Page() {
                     </section>
 
                     {/* === TEAM SECTION === */}
-                    <section className="flex flex-col items-center justify-center gap-6 py-16">
+                    <section className="flex flex-col items-center justify-center  py-16">
                         <h2
                             className={title({
                                 size: "lg",
@@ -239,8 +242,8 @@ export default function Page() {
                         >
                             <span className="text-primary">Meet The</span> Team
                         </h2>
-                        <br />
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl justify-items-center">
+                        <div className="my-4"></div>
+                        <div className="flex justify-center gap-8 p-2 justify-center justify-items-center">
                             {[
                                 {
                                     name: "Muhammad Kholis",
@@ -252,7 +255,7 @@ export default function Page() {
                                 <MagicCard key={i} className="rounded-xl bg-transparent backdrop-blur-xl group" gradientColor={"#2563eb"} gradientOpacity={0.1}>
                                     <a href={t.url} target="_blank" rel="noopener noreferrer" className="block w-full">
                                         <Card className="p-4 flex flex-col items-center text-center rounded-2xl shadow-lg bg-white/5 dark:bg-black/20 transition-transform duration-300 group-hover:scale-105 cursor-pointer">
-                                            <img src={t.img} alt={t.name} className="w-24 h-24 rounded-full object-cover mb-4 shadow-md" />
+                                            <img src={t.img} alt={t.name} className="w-50 h-50 rounded-full object-cover mb-4 shadow-md" />
                                             <h3 className="text-lg font-semibold">{t.name}</h3>
                                             <p className="text-sm opacity-70">{t.role}</p>
                                         </Card>
@@ -262,7 +265,9 @@ export default function Page() {
                         </div>
                     </section>
 
-                    <section className="relative overflow-hidden  flex items-center justify-center " id="contact">
+                    <div className="my-5"></div>
+
+                    <section className="relative overflow-hidden  flex items-center justify-center bg-[#0A090D]" id="contact">
                         <div className="relative z-10  w-full">
                             <Card isBlurred className="p-10  shadow-2xl border border-none">
                                 <CardHeader className="flex flex-col gap-2 items-center text-center">
@@ -271,8 +276,8 @@ export default function Page() {
                                         {/*  <BlurFade delay={0.3} inView>
                                             <AnimatedGradientText>Let’s Start</AnimatedGradientText>
                                         </BlurFade> */}
-                                        <h2 className={title({ class: "text-center", size: "lg", color: "violet" })}>Let’s Start</h2>
                                     </h1>
+                                    <h1 className="text-8xl font-bold bg-gradient-to-r from-violet-500 to-indigo-500 bg-clip-text text-transparent">Let’s Start</h1>
                                 </CardHeader>
 
                                 <CardBody className="mt-6 flex flex-col md:flex-row items-center justify-center gap-3 text-lg">
@@ -282,8 +287,8 @@ export default function Page() {
                                     </Button>
 
                                     {/* Email */}
-                                    <Button className="border-gray-100 dark:border-gray-800" startContent={<Mail className="w-5 h-5 text-white-500" />} as="a" href="mailto:parzivalxdd@gmail.com" variant="bordered" color="primary" radius="lg">
-                                        parzivalxdd@gmail.com
+                                    <Button className="border-gray-100 dark:border-gray-800" startContent={<Mail className="w-5 h-5 text-white-500" />} as="a" href="mailto:parzello.dev@gmail.com" variant="bordered" color="primary" radius="lg">
+                                        parzello.dev@gmail.com
                                     </Button>
                                 </CardBody>
 
@@ -295,7 +300,7 @@ export default function Page() {
                                 LinkedIn
                             </Button> */}
 
-                                    {/*     <Sosmed /> */}
+                                    <Sosmed />
                                 </CardFooter>
                             </Card>
                             {/* <BorderBeam duration={8} size={400} /> */}
@@ -304,5 +309,35 @@ export default function Page() {
                 </div>
             </div>
         </>
+    );
+}
+
+function Sosmed() {
+    return (
+        <div className="flex gap-4 justify-center md:justify-start">
+            <a href={siteConfig.links.playstore} rel="noopener noreferrer" target="_blank">
+                <ShinyButton color="primary">
+                    <SiGoogleplay className="w-5 h-5" />
+                </ShinyButton>
+            </a>
+
+            <a href={siteConfig.links.linkedin} rel="noopener noreferrer" target="_blank">
+                <ShinyButton color="primary">
+                    <Linkedin className="w-5 h-5" />
+                </ShinyButton>
+            </a>
+
+            <a href={siteConfig.links.github} rel="noopener noreferrer" target="_blank">
+                <ShinyButton color="primary">
+                    <Github className="w-5 h-5" />
+                </ShinyButton>
+            </a>
+
+            <a href={siteConfig.links.instagram} rel="noopener noreferrer" target="_blank">
+                <ShinyButton color="primary">
+                    <Instagram className="w-5 h-5" />
+                </ShinyButton>
+            </a>
+        </div>
     );
 }
