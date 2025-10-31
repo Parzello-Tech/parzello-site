@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-    name: "Parzello Landing Page",
+    name: "Parzello - Technology should be accessible",
     description: "Parzello is a digital agency focused on Web & Mobile Development, delivering innovative digital solutions for businesses and communities.",
     navItems: [
         {

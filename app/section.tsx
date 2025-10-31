@@ -1,7 +1,9 @@
 // AboutUs.tsx
-import { Card, CardBody } from "@heroui/react";
+import { Button, Card, CardBody, Link } from "@heroui/react";
 import { title, subtitle } from "@/components/primitives";
 import { Users, Code2, Rocket } from "lucide-react";
+import { MagicCard } from "@/components/magicui/magic-card";
+import { button as buttonStyles } from "@heroui/theme";
 
 const features = [
     {
@@ -24,7 +26,7 @@ const features = [
     },
 ];
 
-export default function SectionAboutUs() {
+export function SectionAboutUs() {
     return (
         <section id="about" className="flex flex-col items-center justify-center py-16 px-6 md:px-12">
             <h2 className={title({ class: "text-center", size: "lg", color: "violet" })}>
@@ -52,6 +54,49 @@ export default function SectionAboutUs() {
                         </CardBody>
                     </Card>
                 ))}
+            </div>
+        </section>
+    );
+}
+
+export function SectionOurApps() {
+    return (
+        <section className="flex flex-col items-center justify-center gap-6 py-12">
+            <h2 className={title({ size: "lg", class: "text-center", color: "violet" })}>
+                <span className="text-primary">Our</span> Apps
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+                {[{ name: "Parzello Website", img: "/images/portfolio/portfolio1.png", desc: "Official website for Parzello digital agency.", link: "#" }].map((p, i) => (
+                    <MagicCard key={i} className="rounded-xl bg-transparent backdrop-blur-xl group p-4" gradientColor={"#9333ea"} gradientOpacity={0.1}>
+                        <Card isBlurred className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 group-hover:scale-105">
+                            <img src={p.img} alt={p.name} className="w-full h-40 object-cover" />
+
+                            <CardBody>
+                                <h3 className="text-lg font-semibold">{p.name}</h3>
+                                <p className="text-sm opacity-80">{p.desc}</p>
+                                {/*   <a href={p.link} className="text-violet-500 text-sm font-medium mt-2 inline-block hover:underline">
+                                                View Details →
+                                            </a> */}
+                                <br />
+                                <Button color="secondary" variant="flat" className="mt-2">
+                                    View Details →
+                                </Button>
+                            </CardBody>
+                        </Card>
+                    </MagicCard>
+                ))}
+            </div>
+            <div className="mt-6">
+                <Link
+                    className={buttonStyles({
+                        color: "primary",
+                        radius: "full",
+                        variant: "shadow",
+                    })}
+                    href="#"
+                >
+                    See Full Portfolio
+                </Link>
             </div>
         </section>
     );

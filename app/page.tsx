@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Link } from "@heroui/link";
@@ -12,7 +14,6 @@ import { Button, Card, CardBody, CardFooter, CardHeader } from "@heroui/react";
 
 import { MagicCard } from "@/components/magicui/magic-card";
 import TechMarquee from "@/components/my_marquee";
-import SectionAboutUs from "./section";
 
 import { ParzelloBeams } from "@/components/parzello_beams";
 import { Meteors } from "@/components/magicui/meteors";
@@ -23,17 +24,24 @@ import { ShinyButton } from "@/components/magicui/shiny-button";
 import { Github, Instagram, Linkedin, ArrowRight, Mail, Phone } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { SiGoogleplay } from "react-icons/si";
+import { SectionAboutUs, SectionOurApps } from "./section";
+import Particles from "@/components/Particles";
+import Plasma from "@/components/Plasma";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default function Page() {
     return (
         <>
             {/* === HERO SECTION === */}
             <section className="relative flex flex-col items-center justify-center gap-4 py-8  md:py-12">
-                <Meteors className="opacity-[0.2]" />
+                {/* <Meteors className="opacity-[0.2]" /> */}
+
                 {/* === Background khusus Hero === */}
                 <div className="absolute inset-0 ">
-                    {/* atau pakai gambar */}
-                    <div className="h-full w-full bg-[url('/images/BG.png')] bg-cover bg-center " style={{ opacity: 0.2 }} />
+                    <BackgroundBeams />
+                    {/* <Plasma color="#6c24fe" speed={0.6} direction="forward" scale={1.1} opacity={0.8} mouseInteractive={false} /> */}
+                    {/* <Particles particleColors={["#ffffff", "#ffffff"]} particleCount={200} particleSpread={10} speed={0.1} particleBaseSize={100} moveParticlesOnHover={true} alphaParticles={false} disableRotation={false} /> */}
+                    {/* <div className="h-full w-full bg-[url('/images/BG.webp')] bg-cover bg-center " style={{ opacity: 0.2 }} /> */}
                 </div>
 
                 <div className="my-2"></div>
@@ -111,11 +119,11 @@ export default function Page() {
                         <ParzelloBeams />
                     </section>
 
+                    <SectionOurApps />
+
                     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-12">
                         <SectionAboutUs />
                     </section>
-
-                    {/* === SECTION LANJUTAN DI SINI === */}
 
                     {/* === OUR SERVICES SECTION === */}
                     <section id="services" className="flex flex-col items-center justify-center py-16 px-6 md:px-12">
@@ -197,7 +205,7 @@ export default function Page() {
                             <span className="text-primary">Our</span> Works
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
-                            {[{ name: "Parzello Website", img: "/images/portfolio/portfolio1.png", desc: "Official website for Parzello digital agency.", link: "#" }].map((p, i) => (
+                            {[{ name: "Parzello Website", img: "/images/portfolio/portfolio1.webp", desc: "Official website for Parzello digital agency.", link: "#" }].map((p, i) => (
                                 <MagicCard key={i} className="rounded-xl bg-transparent backdrop-blur-xl group p-4" gradientColor={"#9333ea"} gradientOpacity={0.1}>
                                     <Card isBlurred className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 group-hover:scale-105">
                                         <img src={p.img} alt={p.name} className="w-full h-40 object-cover" />
@@ -248,7 +256,7 @@ export default function Page() {
                                 {
                                     name: "Muhammad Kholis",
                                     role: "Founder & Lead Developer",
-                                    img: "/images/muhammadkholis.png",
+                                    img: "/images/muhammadkholis.webp",
                                     url: "https://portfolio-mkholis.vercel.app/", // ganti sesuai link tujuan
                                 },
                             ].map((t, i) => (
