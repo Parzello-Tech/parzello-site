@@ -1,4 +1,4 @@
-import { Heading, Text, Button, Avatar, RevealFx, Column, Badge, Row, Schema, Meta, Line } from "@once-ui-system/core";
+import { Heading, Text, Button, Avatar, RevealFx, Column, Badge, Row, Schema, Meta, Line, Card, Media, Icon } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
@@ -86,24 +86,42 @@ export default function Home() {
                 )}
                 <Projects range={[2]} />
 
-                {/* 👥 Team Section */}
-                <RevealFx translateY="16" delay={0.4}>
-                    <Column fillWidth gap="24" marginTop="l" marginBottom="xl">
-                        <Row fillWidth paddingX="20" horizontal="center">
+                <RevealFx translateY="16" delay={0.3}>
+                    <Column fillWidth gap="32" marginTop="l" marginBottom="xl">
+                        {/* 🧩 Title */}
+                        <Row fillWidth horizontal="center">
                             <Heading as="h2" variant="display-strong-xs" wrap="balance">
                                 Meet Our Team
                             </Heading>
                         </Row>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-8">
+                        {/* 👥 Team Grid */}
+                        <Row fillWidth gap="24" horizontal="center" paddingX="l">
                             {/* 🧑 Member 1 */}
-                            <div className="flex flex-col items-center text-center bg-white dark:bg-neutral-900 rounded-2xl shadow-md p-6 transition hover:shadow-lg">
-                                {/* <img src="images/team/muhammad_kholis.png" alt="Muhammad Kholis" className="w-24 h-24 rounded-full object-cover mb-4" /> */}
-                                <h3 className="text-lg font-semibold">Muhammad Kholis</h3>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">Founder & Lead Developer</p>
-                                <p className="text-sm mt-2 text-gray-600 dark:text-gray-300">Fullstack developer with focus on Flutter, Firebase, and Next.js.</p>
-                            </div>
-                        </div>
+                            <Card radius="l-4" direction="column" border="neutral-alpha-medium" style={{ width: "320px" }}>
+                                <Row fillWidth paddingX="20" paddingY="12" gap="8" vertical="center">
+                                    <Avatar size="xs" src="/images/team/muhammad_kholis.png" />
+                                    <Text variant="label-default-s">Muhammad Kholis</Text>
+                                </Row>
+
+                                <Media border="neutral-alpha-weak" fillWidth aspectRatio="1 / 1" radius="l" alt="Muhammad Kholis" src="/images/team/muhammad_kholis.png" />
+
+                                <Column fillWidth paddingX="20" paddingY="24" gap="8">
+                                    <Text variant="body-default-xl">Founder & Lead Developer</Text>
+                                    <Text onBackground="neutral-weak" variant="body-default-s">
+                                        Fullstack developer focusing on Flutter, Firebase, and Next.js.
+                                    </Text>
+                                </Column>
+
+                                <Line background="neutral-alpha-medium" />
+
+                                <Row fillWidth paddingX="20" paddingY="12" horizontal="center" vertical="center">
+                                    <Button variant="secondary" size="l" weight="default" href="https://portfolio-mkholis.vercel.app/" target="_blank" rel="noopener noreferrer" arrowIcon>
+                                        See Profile
+                                    </Button>
+                                </Row>
+                            </Card>
+                        </Row>
                     </Column>
                 </RevealFx>
 
