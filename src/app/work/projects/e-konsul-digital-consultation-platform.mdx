@@ -1,0 +1,47 @@
+---
+title: "E-Konsul — Digital Consultation Platform"
+publishedAt: "2025-11-02"
+summary: "Platform konsultasi digital yang memudahkan mahasiswa dan dosen untuk terhubung secara online melalui antarmuka modern, fitur chat real-time, serta sistem manajemen jadwal dan bimbingan yang efisien."
+
+images:
+    - "/images/projects/ekonsul/ekonsul1.png"
+team:
+    - name: "Muhammad Kholis"
+      role: "Fullstack Developers"
+      avatar: "/images/team/muhammad_kholis.png"
+      linkedIn: "https://www.linkedin.com/in/muhammad-kholis-51ba57195/"
+    - name: "Parzello Tech"
+      role: "Development Team"
+      avatar: "/images/parzello.png"
+      linkedIn: "https://www.linkedin.com/company/parzello-tech/"
+---
+
+## Overview
+
+**E-Konsul** adalah platform konsultasi digital yang memudahkan pengguna untuk terhubung dengan konsultan profesional secara online. Proyek ini dikembangkan menggunakan **Flutter** untuk aplikasi lintas platform dan **Firebase** untuk autentikasi serta manajemen data real-time.
+
+## Key Features
+
+-   **Real-Time Chat**: Pengguna dapat berinteraksi langsung dengan konsultan melalui chat berbasis Firebase Firestore.
+-   **Appointment Scheduling**: Fitur pemesanan jadwal konsultasi dengan sistem notifikasi otomatis.
+-   **User Authentication**: Dukungan login menggunakan Google dan Email/Password.
+-   **Admin Dashboard**: Halaman admin untuk mengelola pengguna, sesi konsultasi, dan laporan kegiatan.
+-   **Responsive Design**: Antarmuka adaptif untuk tampilan mobile dan desktop.
+
+## Technologies Used
+
+-   **Flutter**: Untuk pengembangan aplikasi lintas platform (Android, iOS, Web).
+-   **Firebase Firestore**: Sebagai database real-time untuk menyimpan data pengguna dan percakapan.
+-   **Firebase Authentication**: Untuk sistem login dan manajemen akun.
+-   **Cloud Functions**: Untuk otomatisasi notifikasi dan sinkronisasi data.
+-   **Figma**: Untuk desain antarmuka dan kolaborasi UI/UX.
+
+## Challenges and Learnings
+
+Salah satu tantangan utama adalah memastikan komunikasi real-time tetap efisien meskipun dengan koneksi internet yang tidak stabil. Solusinya adalah dengan mengimplementasikan **offline persistence Firestore** dan caching lokal menggunakan **Hive**.  
+Selain itu, pengaturan arsitektur **MVC dengan Provider** membantu menjaga skalabilitas dan keteraturan kode saat tim berkembang.
+
+## Outcome
+
+E-Konsul kini digunakan oleh beberapa konsultan independen untuk melayani klien mereka secara online. Platform ini berhasil mempercepat proses konsultasi, mengurangi kesalahan jadwal, dan meningkatkan efisiensi komunikasi antara konsultan dan pengguna.  
+Proyek ini menjadi salah satu showcase utama **Parzello Tech** dalam kategori solusi digital berbasis Flutter dan Firebase.
