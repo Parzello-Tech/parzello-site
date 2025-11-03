@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "project": "Parzello Tech Website",
+    "date": "2025-10-29",
+    "prepared_by": "Software Development Manager"
+  },
+  "product_overview": "Parzello Tech Website is a landing page platform featuring a portfolio showcase, blog system, team information, and newsletter subscription designed to promote Parzello Tech online.",
+  "core_goals": [
+    "Provide a visually appealing and informative landing page for Parzello Tech.",
+    "Showcase featured projects and company team to engage visitors.",
+    "Offer a blog system to publish and share company news and articles.",
+    "Enable newsletter subscription integration for continuous engagement.",
+    "Ensure secure access to protected content with route guarding.",
+    "Optimize website for SEO and social media sharing to increase visibility."
+  ],
+  "key_features": [
+    "Home Page: Displays featured projects, blog posts, team section, and a newsletter subscription form integrated with Mailchimp.",
+    "About Page: Includes company introduction, work experience, educational background, and technical skills with a navigable table of contents.",
+    "Blog System: MDX-based posts with listing, individual post pages, social sharing options, and RSS feed support.",
+    "Work/Projects Section: Detailed project showcase with listings and individual project details.",
+    "Gallery: Photo grid display for visual content presentation.",
+    "Route Guard: Password protection for sensitive content pages.",
+    "Header & Footer Components: Navigation menu, theme toggling, location display, social links, and copyright info.",
+    "Theme Toggle: Dark and light mode switch with system preference auto-detection.",
+    "OG Image Generation: API to create social media friendly preview images.",
+    "SEO & Metadata: Automated metadata creation, schema markup, sitemap, and robots.txt.",
+    "Smooth Scroll to Hash Anchors: Enhances user navigation experience."
+  ],
+  "user_flow_summary": [
+    "User lands on the Home Page to explore featured projects, recent blogs, and team info.",
+    "User navigates to the About Page to learn more about the company’s background and skills.",
+    "User browses the Blog section to read articles and shares posts via social platforms.",
+    "User visits the Work or Projects section to view detailed project information.",
+    "User subscribes to the newsletter via Mailchimp integration to receive updates.",
+    "Protected routes request password authentication before access.",
+    "User toggles site theme between dark and light modes according to preference.",
+    "SEO mechanisms ensure pages are properly indexed and shareable on social media."
+  ],
+  "validation_criteria": [
+    "All pages load correctly on modern browsers and devices with responsive design.",
+    "Blog posts render accurately with all markdown/MDX elements and social sharing features.",
+    "Newsletter subscription communicates successfully with Mailchimp API and handles errors gracefully.",
+    "Password-protected routes restrict access unless authenticated.",
+    "Theme toggle persists user preference and follows system defaults initially.",
+    "SEO metadata including OG images, sitemap, and schema markup must be present and valid.",
+    "API endpoints for OG image generation, RSS feeds, and authentication return correct data and handle failures appropriately.",
+    "Smooth scrolling to sections via hash links functions without jank or broken behavior."
+  ],
+  "code_summary": {
+    "tech_stack": [
+      "TypeScript",
+      "JavaScript",
+      "Next.js",
+      "React",
+      "MDX",
+      "SCSS",
+      "Tailwind CSS"
+    ],
+    "features": [
+      {
+        "name": "Home Page",
+        "description": "Portfolio homepage with featured projects, latest blog posts, team section, and newsletter subscription",
+        "files": [
+          "src/app/page.tsx"
+        ]
+      },
+      {
+        "name": "About Page",
+        "description": "About page with introduction, work experience, studies, and technical skills sections with table of contents",
+        "files": [
+          "src/app/about/page.tsx",
+          "src/components/about/TableOfContents.tsx"
+        ]
+      },
+      {
+        "name": "Blog System",
+        "description": "MDX-based blog system with post listing, individual post pages, and social sharing",
+        "files": [
+          "src/app/blog/page.tsx",
+          "src/app/blog/[slug]/page.tsx",
+          "src/components/blog/Post.tsx",
+          "src/components/blog/Posts.tsx",
+          "src/components/blog/ShareSection.tsx"
+        ]
+      },
+      {
+        "name": "Work/Projects",
+        "description": "Project showcase system with project listing and individual project detail pages",
+        "files": [
+          "src/app/work/page.tsx",
+          "src/app/work/[slug]/page.tsx",
+          "src/components/work/Projects.tsx",
+          "src/components/ProjectCard.tsx"
+        ]
+      },
+      {
+        "name": "Gallery",
+        "description": "Photo gallery page displaying images in a grid layout",
+        "files": [
+          "src/app/gallery/page.tsx",
+          "src/components/gallery/GalleryView.tsx"
+        ]
+      },
+      {
+        "name": "Route Guard",
+        "description": "Password protection system for protected routes with authentication check",
+        "files": [
+          "src/components/RouteGuard.tsx",
+          "src/app/api/authenticate/route.ts",
+          "src/app/api/check-auth/route.ts"
+        ]
+      },
+      {
+        "name": "Header Component",
+        "description": "Site navigation header with menu, theme toggle, and location display",
+        "files": [
+          "src/components/Header.tsx"
+        ]
+      },
+      {
+        "name": "Footer Component",
+        "description": "Site footer with social links and copyright information",
+        "files": [
+          "src/components/Footer.tsx"
+        ]
+      },
+      {
+        "name": "Theme Toggle",
+        "description": "Dark/light mode theme switcher with system preference detection",
+        "files": [
+          "src/components/ThemeToggle.tsx",
+          "src/app/layout.tsx"
+        ]
+      },
+      {
+        "name": "Mailchimp Integration",
+        "description": "Newsletter subscription component integrated with Mailchimp",
+        "files": [
+          "src/components/Mailchimp.tsx"
+        ]
+      },
+      {
+        "name": "OG Image Generation",
+        "description": "Open Graph image generation API for social media sharing",
+        "files": [
+          "src/app/api/og/generate/route.tsx",
+          "src/app/api/og/fetch/route.ts",
+          "src/app/api/og/proxy/route.ts"
+        ]
+      },
+      {
+        "name": "RSS Feed",
+        "description": "RSS feed generation API for blog posts",
+        "files": [
+          "src/app/api/rss/route.ts"
+        ]
+      },
+      {
+        "name": "Content Configuration",
+        "description": "Centralized content and configuration management for site content, routes, and styling",
+        "files": [
+          "src/resources/content.tsx",
+          "src/resources/once-ui.config.ts"
+        ]
+      },
+      {
+        "name": "MDX Components",
+        "description": "Custom MDX components for rendering markdown content in blog posts and project pages",
+        "files": [
+          "src/components/mdx.tsx",
+          "src/components/HeadingLink.tsx"
+        ]
+      },
+      {
+        "name": "Utilities",
+        "description": "Utility functions for date formatting and MDX post retrieval",
+        "files": [
+          "src/utils/utils.ts",
+          "src/utils/formatDate.ts"
+        ]
+      },
+      {
+        "name": "SEO & Metadata",
+        "description": "Automatic metadata generation, schema markup, sitemap, and robots.txt",
+        "files": [
+          "src/app/robots.ts",
+          "src/app/sitemap.ts"
+        ]
+      },
+      {
+        "name": "Providers",
+        "description": "React context providers for application state management",
+        "files": [
+          "src/components/Providers.tsx"
+        ]
+      },
+      {
+        "name": "Scroll to Hash",
+        "description": "Component for smooth scrolling to hash anchors",
+        "files": [
+          "src/components/ScrollToHash.tsx"
+        ]
+      }
+    ]
+  }
+}

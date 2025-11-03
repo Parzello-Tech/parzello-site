@@ -1,0 +1,437 @@
+[
+  {
+    "id": "TC001",
+    "title": "Home Page Content Load and Display",
+    "description": "Verify the Home Page loads correctly displaying featured projects, latest blog posts, team section, and Mailchimp newsletter subscription form.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Home Page"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that featured projects are displayed with proper titles and images"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify latest blog posts are listed with correct titles and excerpts"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm team section is shown with member names and roles"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure newsletter subscription form is visible and accepts input"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Newsletter Subscription Success Flow",
+    "description": "Verify newsletter subscription through Mailchimp integration succeeds with valid email and displays confirmation.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Home Page"
+      },
+      {
+        "type": "action",
+        "description": "Input a valid email address in the newsletter subscription form"
+      },
+      {
+        "type": "action",
+        "description": "Submit the subscription form"
+      },
+      {
+        "type": "assertion",
+        "description": "Validate that a success message or confirmation is displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Newsletter Subscription Failure Handling",
+    "description": "Verify proper error message is shown when newsletter subscription fails due to invalid email or Mailchimp API error.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Home Page"
+      },
+      {
+        "type": "action",
+        "description": "Input an invalid email address or simulate Mailchimp API failure"
+      },
+      {
+        "type": "action",
+        "description": "Submit the subscription form"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure an appropriate error message is displayed to the user"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "About Page Content and Table of Contents Navigation",
+    "description": "Verify About Page loads correctly with company introduction, work experience, education, technical skills sections and table of contents navigation works.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to About Page"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that company introduction, work experience, studies, and technical skills sections are displayed"
+      },
+      {
+        "type": "action",
+        "description": "Use the table of contents to navigate to each section"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm smooth scroll behavior brings the correct section into view"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Blog Listing and Post Rendering",
+    "description": "Verify the blog listing page displays all posts correctly and individual blog posts render MDX content including images, links, and embedded components accurately.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Blog listing page"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm all blog posts are listed with correct titles and excerpts"
+      },
+      {
+        "type": "action",
+        "description": "Click on a blog post to open the individual post page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the MDX content is rendered properly including text, images, links, and custom components"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Blog Post Social Sharing Functionality",
+    "description": "Ensure social sharing buttons on blog posts function correctly, opening respective social media share dialogs with correct post link and title.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to a blog post page"
+      },
+      {
+        "type": "action",
+        "description": "Click on each social media sharing button (e.g., Twitter, Facebook)"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify social sharing dialog opens and contains correct post information in share content"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "RSS Feed Generation Verification",
+    "description": "Verify that the RSS feed API endpoint returns a valid RSS feed containing the latest blog posts.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send a GET request to the RSS feed API endpoint"
+      },
+      {
+        "type": "assertion",
+        "description": "Validate the RSS XML content is well-formed and contains appropriate blog post entries"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Work/Projects Listing and Detail View",
+    "description": "Verify the Work/Projects section lists all projects and individual project detail pages display accurate information.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Work/Projects listing page"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that all projects are displayed with relevant summaries and images"
+      },
+      {
+        "type": "action",
+        "description": "Select a project to view its detailed page"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm detailed project information including descriptions and associated media is shown correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Gallery Photo Grid Display",
+    "description": "Verify Gallery page loads with a responsive photo grid displaying images correctly.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Gallery page"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm photo grid is displayed with loading of images visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify images resize responsively on different screen sizes"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Route Guard Password Protection Success",
+    "description": "Verify that password protected routes prompt for authentication and allow access upon correct password entry.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to a protected route URL"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm a password prompt or login form is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Enter the correct password"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the protected content page loads successfully"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Route Guard Password Protection Failure",
+    "description": "Verify that access to protected routes is denied with invalid password and appropriate error is shown.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to a protected route URL"
+      },
+      {
+        "type": "action",
+        "description": "Enter an incorrect password"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm access is denied and error notification is displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Theme Toggle and System Preference Detection",
+    "description": "Verify that the theme toggle switches between light and dark modes correctly and initially detects system color preference.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load any page and observe the initial theme matches system preference"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the theme switch to change the site theme"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the theme changes visually between dark and light modes"
+      },
+      {
+        "type": "action",
+        "description": "Reload or revisit the site"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the last selected theme persists across page loads"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "OG Image Generation API Valid Response",
+    "description": "Verify that the OG image generation API endpoint creates appropriate social media preview images and handles valid requests successfully.",
+    "category": "integration",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send a valid POST or GET request to the OG image generation API with required parameters"
+      },
+      {
+        "type": "assertion",
+        "description": "Validate that the API returns a generated image URL or binary data successfully"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "OG Image Generation API Error Handling",
+    "description": "Verify the OG image generation API returns appropriate error messages and handles invalid or malformed requests gracefully.",
+    "category": "error handling",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send an invalid or incomplete request to the OG image generation API"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm that a meaningful error response is returned"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "SEO Metadata Presence and Validity",
+    "description": "Verify that each page generates correct automated SEO metadata including title, description, OG tags, schema markup, sitemap and robots.txt are present and valid.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Inspect metadata in the HTML head section of Home, About, Blog and other pages"
+      },
+      {
+        "type": "assertion",
+        "description": "Check for presence and correctness of title, meta description, OG image, and schema markup"
+      },
+      {
+        "type": "action",
+        "description": "Fetch sitemap.xml and robots.txt files from the root path"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify sitemap contains correct URLs and robots.txt exists with proper directives"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Smooth Scroll to Hash Anchors",
+    "description": "Verify smooth scrolling behavior when navigating to in-page hash anchors via table of contents or direct URL hash.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate within a page using links with hash anchors in URL (e.g., About page TOC or direct URL)"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the page smoothly scrolls to the correct section with no jank or broken behavior"
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Header Component Navigation and Features",
+    "description": "Verify the header component displays navigation menu, functional theme toggle, and location information correctly.",
+    "category": "ui",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load a page and observe the header bar"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that navigation menu links are present and clickable"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the theme toggle is visible and operational"
+      },
+      {
+        "type": "assertion",
+        "description": "Validate that location (likely geographic or operational) display updates or shows correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "Footer Component Content and Social Links",
+    "description": "Verify footer displays social links and copyright information correctly.",
+    "category": "ui",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Scroll to the bottom of any page to view footer"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm social media icons/links are correct and clickable"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify copyright text is present and accurate"
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "API Authentication Success and Failure",
+    "description": "Verify API routes for authentication check and password authentication return correct responses when provided with valid and invalid data.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send authentication request with valid credentials to authentication API"
+      },
+      {
+        "type": "assertion",
+        "description": "Assert the API returns success status and valid tokens or confirmation"
+      },
+      {
+        "type": "action",
+        "description": "Send authentication request with invalid credentials"
+      },
+      {
+        "type": "assertion",
+        "description": "Assert the API returns failure status and appropriate error message"
+      }
+    ]
+  }
+]

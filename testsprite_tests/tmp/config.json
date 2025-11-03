@@ -1,0 +1,16 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3000",
+  "executionArgs": {
+    "projectName": "parzello-site",
+    "projectPath": "E:\\MY BRANDING\\Portfolio Project\\parzello-site",
+    "testIds": [],
+    "additionalInstruction": "",
+    "envs": {
+      "API_KEY": "sk-user-Alk7-zFD8vqdwHLHJIMQ7u3zDR03v6qtc1Zn2bsci02In4K_3EeqP8Cd_es0kTH5FEdWaw8PcJJk0Zih8GvbC-Pep6rcEOkZbNBs5LtZgeXh2uCM1mcN7EvoqGOY4Wnr0WA"
+    }
+  },
+  "proxy": "http://cc133b46-b0f0-4471-b3e7-e0dd33d0dfa5:JE69P9FjTICTFMwRKfNa9eLW1QCidmVM@tun.testsprite.com:8080"
+}
