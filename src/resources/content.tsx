@@ -47,7 +47,7 @@ const home: Home = {
     path: "/",
     image: "/images/og/home.jpg",
     label: "Home",
-    title: "Parzello Tech - Technology should be accessible ",
+    title: "Parzello Tech | Digital Solutions for Your Business Growth ",
     description: "Parzello is a digital agency focused on Web & Mobile Development, delivering innovative digital solutions for businesses and communities.",
     headline: <>Digital Solutions for Your Business Growth </>,
     featured: {
