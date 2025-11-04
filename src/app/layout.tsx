@@ -84,6 +84,7 @@ export default async function RootLayout({
                     }}
                 />
 
+                {/* Google Analytics */}
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JL9RRRRGL2" />
                 <script
                     dangerouslySetInnerHTML={{
@@ -95,6 +96,7 @@ export default async function RootLayout({
                 `,
                     }}
                 />
+                {/* Google Analytics */}
             </head>
             <Providers>
                 <Column as="body" background="page" fillWidth style={{ minHeight: "100vh" }} margin="0" padding="0" horizontal="center">
