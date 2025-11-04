@@ -48,7 +48,7 @@ const home: Home = {
     image: "/images/og/home.jpg",
     label: "Home",
     title: "Parzello Tech | Digital Solutions for Your Business Growth ",
-    description: "Parzello is a digital agency focused on Web & Mobile Development, delivering innovative digital solutions for businesses and communities.",
+    description: "Parzello Tech adalah Digital Agency yang berfokus pada Web & Mobile Development, memberikan solusi digital inovatif untuk bisnis dan komunitas.",
     headline: <>Digital Solutions for Your Business Growth </>,
     featured: {
         display: true,
