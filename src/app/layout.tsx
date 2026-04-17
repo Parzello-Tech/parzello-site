@@ -85,6 +85,7 @@ export default async function RootLayout({
                 />
 
                 {/* Google Analytics */}
+                {/* eslint-disable-next-line @next/next/next-script-for-ga */}
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JL9RRRRGL2" />
                 <script
                     dangerouslySetInnerHTML={{
