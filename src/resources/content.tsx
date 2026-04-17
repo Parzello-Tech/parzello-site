@@ -235,7 +235,7 @@ const team: Team = {
         {
             name: "Muhammad Kholis",
             role: "Founder & Lead Developer",
-            avatar: "/images/team/muhammad_kholis.png",
+            avatar: "/images/team/muhammad_kholis2.jpg",
             description: "Flutter & Web Developer yang passionate dalam membangun aplikasi modern. Mahasiswa Teknik Informatika PNL dengan fokus pada software development dan teknologi kreatif.",
             profileLink: "https://portfolio-mkholis.vercel.app/",
         },
