@@ -1,4 +1,4 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work, Team } from "@/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -221,4 +221,26 @@ const gallery: Gallery = {
     ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const team: Team = {
+    display: true,
+    title: "Meet Our Team",
+    description: "Meet the talented individuals behind Parzello Tech.",
+    members: [
+        {
+            name: "Muhammad Kholis",
+            role: "Founder & Lead Developer",
+            avatar: "/images/team/muhammad_kholis.png",
+            description: "Fullstack developer focusing on Flutter, Firebase, and Next.js.",
+            profileLink: "https://portfolio-mkholis.vercel.app/",
+        },
+        {
+            name: "Muhammad Kholis",
+            role: "Founder & Lead Developer",
+            avatar: "/images/team/muhammad_kholis.png",
+            description: "Fullstack developer focusing on Flutter, Firebase, and Next.js.",
+            profileLink: "https://portfolio-mkholis.vercel.app/",
+        },
+    ],
+};
+
+export { person, social, newsletter, home, about, blog, work, gallery, team };

@@ -236,3 +236,24 @@ export interface Gallery extends BasePageConfig {
     orientation: string;
   }>;
 }
+
+/**
+ * Team member configuration.
+ */
+export type TeamMember = {
+  name: string;
+  role: string;
+  description: string;
+  avatar: string;
+  profileLink?: string;
+};
+
+/**
+ * Team section configuration.
+ */
+export type Team = {
+  display: boolean;
+  title: string;
+  description: string;
+  members: TeamMember[];
+};

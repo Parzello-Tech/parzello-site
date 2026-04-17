@@ -1,9 +1,8 @@
 import { Heading, Text, Button, Avatar, RevealFx, Column, Badge, Row, Schema, Meta, Line, Card, Media, Icon } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
+import { home, about, person, baseURL, routes, team } from "@/resources";
+import { Mailchimp, FloatingWhatsApp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
-import { MessageCircle } from "lucide-react"; // ikon WhatsApp opsional
 
 export async function generateMetadata() {
     return Meta.generate({
@@ -86,74 +85,78 @@ export default function Home() {
                 )}
                 <Projects range={[2]} />
 
-                <RevealFx translateY="16" delay={0.3}>
-                    <Column fillWidth gap="32" marginTop="l" marginBottom="xl">
-                        {/* 🧩 Title */}
-                        <Row fillWidth horizontal="center">
-                            <Heading as="h2" variant="display-strong-xs" wrap="balance">
-                                Meet Our Team
-                            </Heading>
-                        </Row>
+                {team.display && (
+                    <RevealFx translateY="16" delay={0.3}>
+                        <Column fillWidth gap="32" marginTop="l" marginBottom="xl">
+                            {/* 🧩 Title */}
+                            <Row fillWidth horizontal="center">
+                                <Heading as="h2" variant="display-strong-xs" wrap="balance">
+                                    {team.title}
+                                </Heading>
+                            </Row>
 
-                        {/* 👥 Team Grid */}
-                        <Row fillWidth gap="24" horizontal="center" paddingX="l">
-                            {/* 🧑 Member 1 */}
-                            <Card radius="l-4" direction="column" border="neutral-alpha-medium" style={{ width: "320px" }}>
-                                <Row fillWidth paddingX="20" paddingY="12" gap="8" vertical="center">
-                                    <Avatar size="xs" src="/images/team/muhammad_kholis.png" />
-                                    <Text variant="label-default-s">Muhammad Kholis</Text>
-                                </Row>
+                            {/* 👥 Team Grid */}
+                            <Row fillWidth gap="24" horizontal="center" paddingX="l">
+                                {team.members.map((member, index) => (
+                                    <Card
+                                        key={index}
+                                        radius="l-4"
+                                        direction="column"
+                                        border="neutral-alpha-medium"
+                                        style={{ width: "320px" }}
+                                    >
+                                        <Row fillWidth paddingX="20" paddingY="12" gap="8" vertical="center">
+                                            <Avatar size="xs" src={member.avatar} />
+                                            <Text variant="label-default-s">{member.name}</Text>
+                                        </Row>
 
-                                <Media border="neutral-alpha-weak" fillWidth aspectRatio="1 / 1" radius="l" alt="Muhammad Kholis" src="/images/team/muhammad_kholis.png" />
+                                        <Media
+                                            border="neutral-alpha-weak"
+                                            fillWidth
+                                            aspectRatio="1 / 1"
+                                            radius="l"
+                                            alt={member.name}
+                                            src={member.avatar}
+                                        />
 
-                                <Column fillWidth paddingX="20" paddingY="24" gap="8">
-                                    <Text variant="body-default-xl">Founder & Lead Developer</Text>
-                                    <Text onBackground="neutral-weak" variant="body-default-s">
-                                        Fullstack developer focusing on Flutter, Firebase, and Next.js.
-                                    </Text>
-                                </Column>
+                                        <Column fillWidth paddingX="20" paddingY="24" gap="8">
+                                            <Text variant="body-default-xl">{member.role}</Text>
+                                            <Text onBackground="neutral-weak" variant="body-default-s">
+                                                {member.description}
+                                            </Text>
+                                        </Column>
 
-                                <Line background="neutral-alpha-medium" />
-
-                                <Row fillWidth paddingX="20" paddingY="12" horizontal="center" vertical="center">
-                                    <Button variant="secondary" size="l" weight="default" href="https://portfolio-mkholis.vercel.app/" target="_blank" rel="noopener noreferrer" arrowIcon>
-                                        See Profile
-                                    </Button>
-                                </Row>
-                            </Card>
-                        </Row>
-                    </Column>
-                </RevealFx>
+                                        {member.profileLink && (
+                                            <>
+                                                <Line background="neutral-alpha-medium" />
+                                                <Row fillWidth paddingX="20" paddingY="12" horizontal="center" vertical="center">
+                                                    <Button
+                                                        variant="secondary"
+                                                        size="l"
+                                                        weight="default"
+                                                        href={member.profileLink}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        arrowIcon
+                                                    >
+                                                        See Profile
+                                                    </Button>
+                                                </Row>
+                                            </>
+                                        )}
+                                    </Card>
+                                ))}
+                            </Row>
+                        </Column>
+                    </RevealFx>
+                )}
 
                 <Mailchimp />
             </Column>
 
             {/* 🔽 Tombol WhatsApp Floating */}
-            <a
-                href="https://wa.me/6285161787501?text=Halo%20Tim%20*Parzello%20Tech*%20%20Saya%20ingin%20konsultasi%20proyek.
-"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                    position: "fixed",
-                    bottom: "24px",
-                    right: "24px",
-                    backgroundColor: "#000000",
-                    color: "white",
-                    borderRadius: "50%",
-                    width: "56px",
-                    height: "56px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-                    zIndex: 1000,
-                    transition: "transform 0.2s ease-in-out",
-                }}
-                className="hover:scale-110" // jika kamu pakai Tailwind
-            >
-                <MessageCircle size={28} />
-            </a>
+            {/* 🔽 Tombol WhatsApp Floating */}
+            <FloatingWhatsApp />
         </>
     );
 }
