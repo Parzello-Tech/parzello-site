@@ -22,7 +22,12 @@ const nextConfig = {
     compiler: "modern",
     silenceDeprecations: ["legacy-js-api"],
   },
-  turbopack: {},
 };
 
-export default withMDX(nextConfig);
+const finalConfig = withMDX(nextConfig);
+
+if (finalConfig.turbopack) {
+  delete finalConfig.turbopack.conditions;
+}
+
+export default finalConfig;
