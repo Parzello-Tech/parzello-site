@@ -4,7 +4,7 @@ import { HiArrowUpRight, HiOutlineLink, HiArrowTopRightOnSquare, HiEnvelope, HiC
 
 import { PiHouseDuotone, PiUserCircleDuotone, PiGridFourDuotone, PiBookBookmarkDuotone, PiImageDuotone } from "react-icons/pi";
 
-import { SiJavascript, SiNextdotjs, SiFigma, SiSupabase, SiTypescript, SiFirebase } from "react-icons/si";
+import { SiJavascript, SiNextdotjs, SiFigma, SiSupabase, SiTypescript, SiFirebase, SiAdobephotoshop, SiAdobepremierepro, SiBlender, SiCanva, SiPhp, SiPython, SiSqlite, SiCss3, SiHtml5 } from "react-icons/si";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaInstagram, FaFlutter } from "react-icons/fa6";
 
@@ -44,6 +44,15 @@ export const iconLibrary: Record<string, IconType> = {
     typescript: SiTypescript,
     flutter: FaFlutter,
     firebase: SiFirebase,
+    photoshop: SiAdobephotoshop,
+    premiere: SiAdobepremierepro,
+    blender: SiBlender,
+    canva: SiCanva,
+    php: SiPhp,
+    python: SiPython,
+    sqlite: SiSqlite,
+    css: SiCss3,
+    html: SiHtml5,
 };
 
 export type IconLibrary = typeof iconLibrary;

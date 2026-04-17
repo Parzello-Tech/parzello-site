@@ -27,8 +27,7 @@ export const Footer = () => {
                         Parzello Tech
                     </Text>
                     <Text onBackground="neutral-weak">
-                        — Menyediakan solusi digital inovatif untuk mendukung pertumbuhan bisnis Anda.
-                        <br />
+                        — Startup & Digital Agency: Solusi Digital Inovatif untuk Pertumbuhan Bisnis Anda.
                     </Text>
                 </Text>
 

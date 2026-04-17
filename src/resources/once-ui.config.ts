@@ -178,7 +178,7 @@ const schema: SchemaConfig = {
     logo: "",
     type: "Organization",
     name: "Parzello Tech",
-    description: home.description,
+    description: "Parzello Tech adalah startup sekaligus digital agency yang berfokus pada pengembangan aplikasi dan solusi digital yang intuitif, efisien, dan relevan untuk kehidupan modern.",
     email: "parzello.dev@gmail.com",
 };
 

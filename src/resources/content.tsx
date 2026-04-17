@@ -14,8 +14,8 @@ const person: Person = {
 
 const newsletter: Newsletter = {
     display: true,
-    title: <>Subscribe to {person.firstName}'s Newsletter</>,
-    description: <>My weekly newsletter about creativity and engineering</>,
+    title: <>Subscribe to {person.name} Newsletter</>,
+    description: <>Dapatkan update terbaru seputar inovasi digital dan solusi teknologi dari kami.</>,
 };
 
 const social: Social = [
@@ -47,9 +47,9 @@ const home: Home = {
     path: "/",
     image: "/images/og/home.jpg",
     label: "Home",
-    title: "Parzello Tech | Digital Solutions for Your Business Growth ",
-    description: "Parzello Tech adalah Digital Agency yang berfokus pada Web & Mobile Development, memberikan solusi digital inovatif untuk bisnis dan komunitas.",
-    headline: <>Digital Solutions for Your Business Growth </>,
+    title: "Parzello Tech | Digital Solutions for Your Business Growth",
+    description: "Parzello Tech adalah startup sekaligus digital agency yang berfokus pada pengembangan aplikasi dan solusi digital yang intuitif, efisien, dan relevan untuk kehidupan modern.",
+    headline: <>Digital Solutions for Your Business Growth</>,
     featured: {
         display: true,
         title: (
@@ -64,7 +64,8 @@ const home: Home = {
     },
     subline: (
         <>
-            <b>Parzello</b> is a digital agency specializing in modern, scalable, and user-friendly applications.
+            <b>Powerful Apps. For Everyone.</b><br/>
+            Technology should be accessible. Simple apps that empower your everyday life.
         </>
     ),
 };
@@ -73,7 +74,7 @@ const about: About = {
     path: "/about",
     label: "About",
     title: `About – Parzello Tech`,
-    description: `Pelajari lebih lanjut tentang Parzello Tech, tim pengembang berbasis di Indonesia yang berfokus pada pengembangan web dan mobile.`,
+    description: `Menjadi pemimpin dalam inovasi digital yang menciptakan solusi teknologi berdampak positif, praktis, dan scalable untuk masyarakat dan industri.`,
     tableOfContent: {
         display: true,
         subItems: false,
@@ -88,46 +89,67 @@ const about: About = {
     intro: {
         display: true,
         title: "Introduction",
-        description: <>Parzello Tech adalah kolaborasi antara startup dan digital agency yang berfokus pada pengembangan aplikasi web dan mobile. Kami menghadirkan solusi digital inovatif dengan mengutamakan efisiensi, tampilan modern, serta pengalaman pengguna yang menyenangkan.</>,
+        description: <>
+            Parzello Tech adalah startup sekaligus digital agency yang berfokus pada pengembangan aplikasi dan solusi digital yang intuitif, efisien, dan relevan untuk kehidupan modern. Kami menggabungkan semangat inovasi yang fleksibel dengan ketepatan serta keandalan layanan profesional untuk menghadirkan solusi teknologi yang berdampak positif, praktis, dan skalabel bagi masyarakat dan industri.
+        </>,
     },
     work: {
-        display: false, // set to false to hide this section
+        display: true, // set to false to hide this section
         title: "Projects & Experience",
         experiences: [
             {
                 company: "Ticzy App",
                 timeframe: "2025 - Present",
-                role: "Core Product Development",
-                achievements: [<>Mengembangkan Ticzy, aplikasi manajemen produktivitas harian dengan fitur To-Do List, Finance Tracker, Scheduler, dan Daily Journal.</>, <>Menerapkan sistem sinkronisasi antara penyimpanan lokal (Hive/SQLite) dan cloud (Firebase Firestore) dengan autentikasi Google.</>],
-                images: [
-                    {
-                        src: "/images/projects/ticzy/cover-01.jpg",
-                        alt: "Ticzy App Interface",
-                        width: 16,
-                        height: 9,
-                    },
+                role: "Product Management & Core Dev",
+                achievements: [
+                    <>Mengembangkan aplikasi manajemen produktivitas harian dengan fitur To-Do List, Finance Tracker, dan Daily Journal.</>,
+                    <>Mengintegrasikan sistem sinkronisasi cloud menggunakan Supabase dan penyimpanan lokal SQLite.</>
                 ],
+                images: [],
             },
             {
-                company: "Centrepoint App",
-                timeframe: "2023 - 2024",
-                role: "Fullstack Developer",
-                achievements: [<>Membangun aplikasi berbasis Flutter dan Firebase untuk manajemen kegiatan organisasi POLICY (Polytechnic Linux Community).</>, <>Menerapkan sistem absensi dan manajemen acara berbasis Google Sign-In dan Firestore Database.</>],
+                company: "Pentest Mobile",
+                timeframe: "2025 - 2026",
+                role: "Mobile Developer (Diskominsa Aceh)",
+                achievements: [
+                    <>Membangun aplikasi monitoring hasil penetration testing untuk kebutuhan keamanan siber pemerintah Aceh.</>,
+                    <>Fokus pada visualisasi data temuan celah keamanan secara real-time dan manajemen laporan.</>
+                ],
+                images: [],
+            },
+            {
+                company: "E-Konsul",
+                timeframe: "2024 - 2025",
+                role: "Lead Fullstack Developer",
+                achievements: [
+                    <>Platform konsultasi digital yang menghubungkan mahasiswa dan dosen di Politeknik Negeri Lhokseumawe.</>,
+                    <>Dilengkapi fitur chat real-time via Firebase dan sistem penjadwalan bimbingan yang efisien.</>
+                ],
+                images: [],
+            },
+            {
+                company: "Centrepoint",
+                timeframe: "2024",
+                role: "Mobile Developer (UKM POLICY)",
+                achievements: [
+                    <>Digitalisasi sistem absensi dan manajemen organisasi UKM POLICY berbasis QR Code dan Geofencing.</>,
+                    <>Meningkatkan transparansi dan kedisiplinan anggota melalui sistem pencatatan otomatis.</>
+                ],
                 images: [],
             },
         ],
     },
     studies: {
         display: true, // set to false to hide this section
-        title: "Background",
+        title: "Team Background",
         institutions: [
             {
                 name: "Politeknik Negeri Lhokseumawe",
-                description: <>Tim inti Parzello Tech berasal dari mahasiswa dan alumni jurusan Teknologi Informasi dan Komputer, dengan fokus di bidang pengembangan aplikasi dan sistem informasi.</>,
+                description: <>D3 Teknik Informatika (2022 - Sekarang). IPK: 3.53 / 4.00. Aktif dalam organisasi teknologi kampus (UKM POLICY).</>,
             },
             {
-                name: "Independent Projects & Research",
-                description: <>Anggota tim aktif mengembangkan berbagai proyek independen untuk memperdalam kemampuan di Flutter, Next.js, dan sistem berbasis Firebase.</>,
+                name: "SMK Negeri 2 Kota Langsa",
+                description: <>Rekayasa Perangkat Lunak (2019 - 2022). Fokus pada dasar-dasar pemrograman web dan mobile development.</>,
             },
         ],
     },
@@ -136,52 +158,36 @@ const about: About = {
         title: "Technical Skills",
         skills: [
             {
-                title: "Flutter & Firebase",
-                description: <>Mengembangkan aplikasi lintas platform dengan Flutter, serta integrasi cloud menggunakan Firebase Authentication, Firestore, dan Storage.</>,
+                title: "Programming & Frameworks",
+                description: <>Mahir dalam pengembangan mobile dan web menggunakan teknologi modern untuk aplikasi yang cepat dan responsif.</>,
                 tags: [
-                    {
-                        name: "Flutter",
-                        icon: "flutter",
-                    },
-                    {
-                        name: "Firebase",
-                        icon: "firebase",
-                    },
+                    { name: "Flutter", icon: "flutter" },
+                    { name: "Dart", icon: "flutter" },
+                    { name: "Next.js", icon: "nextjs" },
+                    { name: "PHP", icon: "php" },
+                    { name: "Python", icon: "python" },
+                    { name: "JavaScript", icon: "javascript" },
                 ],
-                /*    images: [
-                    {
-                        src: "/images/projects/ticzy/cover-02.jpg",
-                        alt: "Flutter Project Image",
-                        width: 16,
-                        height: 9,
-                    },
-                ], */
             },
             {
-                title: "Next.js & Supabase",
-                description: <>Membangun website dan dashboard modern menggunakan Next.js, Once UI, dan Supabase sebagai backend-as-a-service.</>,
+                title: "Design & Multimedia",
+                description: <>Memiliki minat kuat dalam teknologi kreatif dan desain visual untuk menciptakan antarmuka yang indah.</>,
                 tags: [
-                    {
-                        name: "Next.js",
-                        icon: "nextjs",
-                    },
-                    {
-                        name: "Supabase",
-                        icon: "supabase",
-                    },
-                    {
-                        name: "TypeScript",
-                        icon: "typescript",
-                    },
+                    { name: "Figma", icon: "figma" },
+                    { name: "Photoshop", icon: "photoshop" },
+                    { name: "Premiere Pro", icon: "premiere" },
+                    { name: "Blender", icon: "blender" },
+                    { name: "Canva", icon: "canva" },
                 ],
-                /*   images: [
-                    {
-                        src: "/images/projects/web/cover-03.jpg",
-                        alt: "Next.js Project Image",
-                        width: 16,
-                        height: 9,
-                    },
-                ], */
+            },
+            {
+                title: "Backend & Database",
+                description: <>Berpengalaman dalam mengelola data menggunakan solusi cloud dan penyimpanan lokal.</>,
+                tags: [
+                    { name: "Firebase", icon: "firebase" },
+                    { name: "Supabase", icon: "supabase" },
+                    { name: "SQLite", icon: "sqlite" },
+                ],
             },
         ],
     },
@@ -230,14 +236,7 @@ const team: Team = {
             name: "Muhammad Kholis",
             role: "Founder & Lead Developer",
             avatar: "/images/team/muhammad_kholis.png",
-            description: "Fullstack developer focusing on Flutter, Firebase, and Next.js.",
-            profileLink: "https://portfolio-mkholis.vercel.app/",
-        },
-        {
-            name: "Muhammad Kholis",
-            role: "Founder & Lead Developer",
-            avatar: "/images/team/muhammad_kholis.png",
-            description: "Fullstack developer focusing on Flutter, Firebase, and Next.js.",
+            description: "Flutter & Web Developer yang passionate dalam membangun aplikasi modern. Mahasiswa Teknik Informatika PNL dengan fokus pada software development dan teknologi kreatif.",
             profileLink: "https://portfolio-mkholis.vercel.app/",
         },
     ],
