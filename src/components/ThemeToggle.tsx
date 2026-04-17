@@ -7,7 +7,11 @@ export const ThemeToggle: React.FC = () => {
   const { theme, setTheme } = useTheme();
 
   const mounted = useSyncExternalStore(
-    () => () => {},
+    (callback) => {
+      // Trigger re-render after hydration
+      const timeout = setTimeout(callback, 0);
+      return () => clearTimeout(timeout);
+    },
     () => true,
     () => false
   );
