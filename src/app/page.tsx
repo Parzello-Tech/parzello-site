@@ -1,8 +1,23 @@
+import type { ReactNode } from "react";
 import { Heading, Text, Button, Avatar, RevealFx, Column, Badge, Row, Schema, Meta, Line, Card, Media, Icon } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes, team } from "@/resources";
+import { home, about, person, baseURL, routes, team, work } from "@/resources";
 import { Mailchimp, FloatingWhatsApp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+
+// Monospace, uppercase section label ("eyebrow") used to head each section,
+// following the New Design layout while reusing the existing brand tokens.
+function Eyebrow({ children }: { children: ReactNode }) {
+    return (
+        <Text
+            variant="label-default-s"
+            onBackground="brand-medium"
+            style={{ fontFamily: "var(--font-code)", letterSpacing: "0.22em", textTransform: "uppercase" }}
+        >
+            {children}
+        </Text>
+    );
+}
 
 export async function generateMetadata() {
     return Meta.generate({
@@ -51,18 +66,54 @@ export default function Home() {
                             </Text>
                         </RevealFx>
                         <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
-                            <Button id="about" data-border="rounded" href={about.path} variant="secondary" size="m" weight="default" arrowIcon>
-                                <Row gap="8" vertical="center" paddingRight="4">
-                                    {about.avatar.display && <Avatar marginRight="8" style={{ marginLeft: "-0.75rem" }} src={person.avatar} size="m" />}
-                                    {about.title}
-                                </Row>
-                            </Button>
+                            <Row gap="12" wrap horizontal="center" vertical="center">
+                                <Button id="about" data-border="rounded" href={about.path} variant="secondary" size="m" weight="default" arrowIcon>
+                                    <Row gap="8" vertical="center" paddingRight="4">
+                                        {about.avatar.display && <Avatar marginRight="8" style={{ marginLeft: "-0.75rem" }} src={person.avatar} size="m" />}
+                                        {about.title}
+                                    </Row>
+                                </Button>
+                                <Button data-border="rounded" href={work.path} variant="tertiary" size="m" weight="default" arrowIcon>
+                                    Explore Work
+                                </Button>
+                            </Row>
                         </RevealFx>
                     </Column>
                 </Column>
-                <RevealFx translateY="16" delay={0.6}>
-                    <Projects range={[1, 1]} />
-                </RevealFx>
+                {/* ===== FEATURED ===== */}
+                <Column fillWidth gap="24">
+                    <RevealFx translateY="4" fillWidth>
+                        <Row fillWidth gap="16" vertical="center" paddingX="l">
+                            <Eyebrow>Featured</Eyebrow>
+                            <Line background="neutral-alpha-medium" />
+                        </Row>
+                    </RevealFx>
+                    <RevealFx translateY="16" delay={0.2}>
+                        <Projects range={[1, 1]} />
+                    </RevealFx>
+                </Column>
+
+                {/* ===== PROJECTS & PORTFOLIO ===== */}
+                <Column fillWidth gap="32">
+                    <RevealFx translateY="4" fillWidth>
+                        <Row fillWidth gap="24" vertical="end" paddingX="l" s={{ direction: "column" }}>
+                            <Column flex={1} gap="12">
+                                <Eyebrow>Latest Work</Eyebrow>
+                                <Heading as="h2" variant="display-strong-xs" wrap="balance">
+                                    Projects &amp; Portfolio
+                                </Heading>
+                            </Column>
+                            <Column flex={1} maxWidth={24}>
+                                <Text variant="body-default-m" onBackground="neutral-weak" wrap="balance">
+                                    Selection of products we design and build — from mobile apps to web platforms.
+                                </Text>
+                            </Column>
+                        </Row>
+                    </RevealFx>
+                    <Projects range={[2]} />
+                </Column>
+
+                {/* ===== BLOG ===== */}
                 {routes["/blog"] && (
                     <Column fillWidth gap="24" marginBottom="l">
                         <Row fillWidth paddingRight="64">
@@ -83,23 +134,23 @@ export default function Home() {
                         </Row>
                     </Column>
                 )}
-                <Projects range={[2]} />
 
                 {team.display && (
                     <RevealFx translateY="16" delay={0.3}>
                         <Column fillWidth gap="32" marginTop="l" marginBottom="xl">
                             {/* 🧩 Title */}
-                            <Row fillWidth horizontal="center">
+                            <Column fillWidth horizontal="center" align="center" gap="12">
+                                <Eyebrow>People</Eyebrow>
                                 <Heading as="h2" variant="display-strong-xs" wrap="balance">
                                     {team.title}
                                 </Heading>
-                            </Row>
+                            </Column>
 
                             {/* 👥 Team Grid */}
                             <Row fillWidth gap="24" horizontal="center" paddingX="l">
-                                {team.members.map((member, index) => (
+                                {team.members.map((member) => (
                                     <Card
-                                        key={index}
+                                        key={member.name}
                                         radius="l-4"
                                         direction="column"
                                         border="neutral-alpha-medium"
