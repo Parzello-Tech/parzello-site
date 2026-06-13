@@ -1,0 +1,46 @@
+/* Parzello Tech — Typography tokens
+   Display & UI: Helvetica Now Display (Black for headlines, Light for body/labels)
+   Secondary:   Plus Jakarta Sans (web long-form, product-app UI) */
+
+:root {
+  /* ---- Families ---- */
+  --font-display: "Helvetica Now Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* @kind font */
+  --font-body: "Plus Jakarta Sans", "Helvetica Now Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; /* @kind font */
+
+  /* ---- Weights ---- */
+  --fw-thin: 100;      /* @kind font */
+  --fw-light: 300;     /* @kind font */ /* signature weight for labels & sublines */
+  --fw-regular: 400;   /* @kind font */
+  --fw-medium: 500;    /* @kind font */
+  --fw-bold: 700;      /* @kind font */
+  --fw-extrabold: 800; /* @kind font */
+  --fw-black: 900;     /* @kind font */ /* headlines */
+
+  /* ---- Type scale (post canvas is 1080px wide; values are the real Figma sizes) ----
+     Designed for 1080-wide social canvases. Scale down with rem/em on web. */
+  --fs-display: 96px;   /* hero headline (Black) */
+  --fs-h1: 70px;
+  --fs-h2: 64px;
+  --fs-h3: 48px;
+  --fs-title: 40px;
+  --fs-lead: 35px;      /* subline / lead (Light) */
+  --fs-body: 24px;      /* body copy */
+  --fs-label: 23px;     /* pill labels / footer (Light) */
+  --fs-header: 34px;    /* header brand + section label (Light) */
+
+  /* ---- Line heights ---- */
+  --lh-tight: 1;        /* @kind font */ /* headlines */
+  --lh-snug: 1.12;      /* @kind font */
+  --lh-body: 1.23;      /* @kind font */ /* reels body */
+  --lh-relaxed: 1.5;    /* @kind font */
+
+  /* ---- Letter spacing ---- */
+  --ls-tight: -0.02em; /* @kind font */
+  --ls-normal: 0;      /* @kind font */
+  --ls-wide: 0.04em;   /* @kind font */
+  --ls-caps: 0.08em;   /* @kind font */
+
+  /* ---- Semantic roles ---- */
+  --text-headline-weight: var(--fw-black); /* @kind font */
+  --text-label-weight: var(--fw-light);    /* @kind font */
+}

@@ -1,0 +1,59 @@
+/* Parzello Tech — Color tokens
+   Sourced from the brand palette (Color Pallete.png) and the Instagram
+   carousel post system in Figma. The brand lives on BLACK with a purple
+   gradient signature and rare magenta accents. */
+
+:root {
+  /* ---- Core brand palette ---- */
+  --prz-purple: #6c24fe;        /* primary brand purple (logo gradient top) */
+  --prz-purple-deep: #2b106c;   /* deep purple (gradient shadow / fills) */
+  --prz-indigo: #5315ff;        /* electric indigo (logo gradient bottom) */
+  --prz-violet: #8a38f5;        /* lighter violet highlight */
+  --prz-magenta: #fb04b0;       /* hot magenta accent (use sparingly) */
+  --prz-navy: #180831;          /* near-black navy surface */
+  --prz-black: #000000;         /* canvas / true black */
+  --prz-ink: #0c0c0c;           /* off-black panel */
+
+  /* ---- Neutral / ink ramp (on dark) ---- */
+  --prz-white: #ffffff;
+  --prz-cream: #ffeddc;         /* warm off-white used in some headlines */
+  --prz-gray-100: #f2eded;
+  --prz-gray-300: #d9d9d9;
+  --prz-gray-500: #999999;
+  --prz-gray-700: #373737;
+  --prz-stone: #b2a599;         /* warm taupe (alt accent stroke) */
+
+  /* ---- Brand gradients ---- */
+  --prz-gradient-logo: linear-gradient(150deg, #8a38f5 0%, #6c24fe 45%, #5315ff 100%); /* @kind color */
+  --prz-gradient-purple: linear-gradient(135deg, #8a38f5 0%, #5315ff 100%); /* @kind color */
+  --prz-gradient-aurora: radial-gradient(60% 60% at 50% 90%, rgba(108,36,254,0.55) 0%, rgba(43,16,108,0.0) 70%); /* @kind color */
+  --prz-gradient-magenta: linear-gradient(135deg, #fb04b0 0%, #6c24fe 100%); /* @kind color */
+
+  /* ---- Glass / translucency ---- */
+  --prz-glass-fill: rgba(255,255,255,0.01);
+  --prz-glass-fill-2: rgba(255,255,255,0.04);
+  --prz-glass-stroke: rgba(255,255,255,0.5);
+  --prz-glass-stroke-soft: rgba(255,255,255,0.18);
+  --prz-toplight-white: rgba(255,255,255,0.5);   /* the bright bar atop glass cards */
+  --prz-toplight-purple: rgba(108,36,254,0.5);
+  --prz-purple-80: rgba(108,36,254,0.8);          /* badge fills */
+
+  /* ---- Semantic aliases ---- */
+  --surface-canvas: var(--prz-black);
+  --surface-panel: var(--prz-ink);
+  --surface-glass: var(--prz-glass-fill);
+  --surface-glass-strong: var(--prz-glass-fill-2);
+
+  --text-primary: var(--prz-white);
+  --text-secondary: rgba(255,255,255,0.7);
+  --text-muted: rgba(255,255,255,0.4);
+  --text-faint: rgba(255,255,255,0.3);
+  --text-on-brand: var(--prz-white);
+
+  --brand: var(--prz-purple);
+  --brand-strong: var(--prz-indigo);
+  --accent: var(--prz-magenta);
+
+  --border-hairline: var(--prz-glass-stroke);
+  --border-soft: var(--prz-glass-stroke-soft);
+}

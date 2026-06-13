@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:#0B0F19;}
+  ::selection{background:rgba(77,124,255,0.35);}
+  @keyframes pz-float{0%,100%{transform:translate(0,0)}50%{transform:translate(0,-26px)}}
+  @keyframes pz-pulse{0%,100%{opacity:.55}50%{opacity:.9}}
+</style>
+</helmet>
+<div data-screen-label="Parzello Landing" style="{{ rootStyle }}; position:relative; min-height:100vh; overflow-x:hidden; background:var(--bg,#0B0F19); color:var(--text,#E8ECF4); font-family:'Plus Jakarta Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased;">
+
+  <!-- ambient glows -->
+  <div style="position:absolute; top:-180px; left:50%; transform:translateX(-50%); width:760px; height:760px; border-radius:50%; background:radial-gradient(circle, rgba(77,124,255,0.28), transparent 62%); filter:blur(40px); pointer-events:none; z-index:0; animation:pz-pulse 9s ease-in-out infinite;"></div>
+  <div style="position:absolute; top:520px; right:-160px; width:560px; height:560px; border-radius:50%; background:radial-gradient(circle, rgba(167,139,250,0.22), transparent 64%); filter:blur(40px); pointer-events:none; z-index:0; animation:pz-float 12s ease-in-out infinite;"></div>
+  <div style="position:absolute; top:1400px; left:-180px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle, rgba(77,124,255,0.16), transparent 66%); filter:blur(40px); pointer-events:none; z-index:0;"></div>
+
+  <!-- ===== FLOATING NAVBAR ===== -->
+  <nav style="position:fixed; top:18px; left:50%; transform:translateX(-50%); width:calc(100% - 32px); max-width:1160px; z-index:50;">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:9px 9px 9px 18px; border-radius:999px; border:1px solid var(--border,rgba(255,255,255,0.09)); background:var(--glass,rgba(16,21,34,0.62)); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); box-shadow:0 18px 50px -28px rgba(0,0,0,0.7);">
+
+      <!-- left: brand + location + clock -->
+      <div style="display:flex; align-items:center; gap:11px; min-width:0;">
+        <img src="assets/parzello-logo.png" alt="Parzello" style="width:28px; height:28px; object-fit:contain; flex:none;">
+        <span style="font-size:15px; font-weight:800; letter-spacing:-0.01em; color:var(--text,#E8ECF4); white-space:nowrap;">Parzello</span>
+        <span style="width:1px; height:18px; background:var(--border,rgba(255,255,255,0.12)); flex:none;"></span>
+        <span style="width:8px; height:8px; border-radius:50%; background:#34d399; box-shadow:0 0 10px rgba(52,211,153,0.9); flex:none;"></span>
+        <span style="font-size:13px; font-weight:600; color:var(--text,#E8ECF4); white-space:nowrap;">Asia/Jakarta</span>
+        <span style="font-size:13px; font-weight:600; letter-spacing:0.04em; color:var(--muted,#8A93A6); font-family:ui-monospace,'SFMono-Regular',Menlo,monospace; white-space:nowrap;">{{ time }}</span>
+      </div>
+
+      <!-- center/right: pill menu + toggle -->
+      <div style="display:flex; align-items:center; gap:6px;">
+        <div style="display:flex; align-items:center; gap:2px; padding:4px; border-radius:999px; background:var(--surface,rgba(255,255,255,0.04)); border:1px solid var(--border,rgba(255,255,255,0.07));">
+          <a href="#home" style="padding:8px 14px; border-radius:999px; font-size:14px; font-weight:600; color:var(--text,#E8ECF4); text-decoration:none; transition:background .2s,color .2s;" style-hover="background:rgba(77,124,255,0.16); color:#9db8ff;">Home</a>
+          <a href="#about" style="padding:8px 14px; border-radius:999px; font-size:14px; font-weight:500; color:var(--muted,#8A93A6); text-decoration:none; transition:background .2s,color .2s;" style-hover="background:rgba(77,124,255,0.16); color:#9db8ff;">About</a>
+          <a href="#work" style="padding:8px 14px; border-radius:999px; font-size:14px; font-weight:500; color:var(--muted,#8A93A6); text-decoration:none; transition:background .2s,color .2s;" style-hover="background:rgba(77,124,255,0.16); color:#9db8ff;">Work</a>
+          <a href="#blog" style="padding:8px 14px; border-radius:999px; font-size:14px; font-weight:500; color:var(--muted,#8A93A6); text-decoration:none; transition:background .2s,color .2s;" style-hover="background:rgba(77,124,255,0.16); color:#9db8ff;">Blog</a>
+          <a href="#gallery" style="padding:8px 14px; border-radius:999px; font-size:14px; font-weight:500; color:var(--muted,#8A93A6); text-decoration:none; transition:background .2s,color .2s;" style-hover="background:rgba(77,124,255,0.16); color:#9db8ff;">Gallery</a>
+        </div>
+        <button onClick="{{ toggleTheme }}" aria-label="Toggle theme" style="display:flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid var(--border,rgba(255,255,255,0.09)); background:var(--surface,rgba(255,255,255,0.04)); cursor:pointer; transition:border-color .2s;" style-hover="border-color:rgba(77,124,255,0.5);">
+          <span style="display:inline-block; width:18px; height:18px; border-radius:50%; border:1.5px solid var(--text,#E8ECF4); overflow:hidden; transition:transform .45s cubic-bezier(.2,.7,.2,1); {{ toggleSpin }}">
+            <span style="display:block; width:50%; height:100%; background:var(--text,#E8ECF4);"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- content wrapper -->
+  <div style="position:relative; z-index:1; max-width:1160px; margin:0 auto; padding:0 24px;">
+
+    <!-- ===== HERO ===== -->
+    <section id="home" style="padding:160px 0 90px; text-align:center; display:flex; flex-direction:column; align-items:center;">
+      <div style="display:inline-flex; align-items:center; gap:9px; padding:7px 15px; border-radius:999px; border:1px solid var(--border,rgba(255,255,255,0.1)); background:var(--surface,rgba(255,255,255,0.04)); font-size:13px; font-weight:600; margin-bottom:30px; white-space:nowrap;">
+        <span style="width:6px; height:6px; border-radius:50%; background:#4D7CFF; box-shadow:0 0 8px #4D7CFF;"></span>
+        <span style="color:var(--text,#E8ECF4);">Parzello Tech</span>
+        <span style="color:var(--muted,#8A93A6);">|</span>
+        <span style="color:var(--muted,#8A93A6); font-weight:500;">Latest Project</span>
+      </div>
+
+      <h1 style="margin:0; font-size:clamp(42px,7.2vw,86px); line-height:1.03; font-weight:800; letter-spacing:-0.03em; max-width:13ch; text-wrap:balance;">
+        Digital Solutions for Your <span style="color:#7C9BFF;">Business Growth</span>
+      </h1>
+
+      <p style="margin:28px 0 0; max-width:600px; font-size:clamp(16px,1.6vw,19px); line-height:1.65; color:var(--muted,#8A93A6); text-wrap:pretty;">
+        <span style="color:var(--text,#E8ECF4); font-weight:600;">Powerful Apps. For Everyone.</span> Technology should be accessible. Simple apps that empower your everyday life.
+      </p>
+
+      <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:40px;">
+        <a href="#about" style="display:inline-flex; align-items:center; gap:11px; padding:11px 11px 11px 22px; border-radius:999px; text-decoration:none; font-weight:700; font-size:15px; color:var(--text,#E8ECF4); background:var(--surface,rgba(255,255,255,0.04)); border:1px solid rgba(167,139,250,0.55); transition:transform .25s, border-color .25s, background .25s;" style-hover="transform:translateY(-2px); border-color:#A78BFA; background:rgba(167,139,250,0.12);">
+          About – Parzello Tech
+          <img src="assets/parzello-logo.png" alt="" style="width:30px; height:30px; object-fit:contain;">
+        </a>
+        <a href="#work" style="display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:999px; text-decoration:none; font-weight:600; font-size:15px; color:var(--text,#E8ECF4); border:1px solid var(--border,rgba(255,255,255,0.12)); background:var(--surface,rgba(255,255,255,0.04)); transition:border-color .25s, transform .25s;" style-hover="border-color:rgba(77,124,255,0.5); transform:translateY(-2px);">
+          Explore Work <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED PROJECT ===== -->
+    <section id="work" style="padding:40px 0 10px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:22px;">
+        <span style="font-family:ui-monospace,Menlo,monospace; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#9db8ff;">Featured</span>
+        <span style="flex:1; height:1px; background:var(--border,rgba(255,255,255,0.09));"></span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:0; border-radius:26px; overflow:hidden; border:1px solid var(--border,rgba(255,255,255,0.1)); background:var(--surface,rgba(255,255,255,0.035)); backdrop-filter:blur(14px); transition:border-color .3s, box-shadow .3s;" style-hover="border-color:rgba(77,124,255,0.45); box-shadow:0 30px 80px -40px rgba(77,124,255,0.45);">
+        <!-- visual -->
+        <div style="position:relative; min-height:300px; background:repeating-linear-gradient(135deg, rgba(77,124,255,0.10) 0 14px, rgba(167,139,250,0.05) 14px 28px); display:flex; align-items:flex-end; padding:26px;">
+          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;">
+            <span style="font-family:ui-monospace,Menlo,monospace; font-size:13px; color:var(--muted,#8A93A6); letter-spacing:0.05em;">[ pentest-mobile · app shot ]</span>
+          </div>
+          <span style="position:relative; display:inline-flex; padding:6px 13px; border-radius:999px; font-size:12px; font-weight:700; color:#9db8ff; background:rgba(77,124,255,0.12); border:1px solid rgba(77,124,255,0.4); backdrop-filter:blur(6px);">Case Study</span>
+        </div>
+        <!-- text -->
+        <div style="padding:40px; display:flex; flex-direction:column; justify-content:center;">
+          <h2 style="margin:0; font-size:clamp(26px,2.6vw,34px); font-weight:800; letter-spacing:-0.02em; line-height:1.15;">Pentest Mobile <span style="color:var(--muted,#8A93A6); font-weight:600;">— Monitoring &amp; Management App</span></h2>
+          <p style="margin:18px 0 0; font-size:16px; line-height:1.7; color:var(--muted,#8A93A6); text-wrap:pretty;">Aplikasi mobile yang dibangun untuk Diskominsa Aceh guna memantau dan memanajemen hasil penetration testing dengan sistem autentikasi dan pengelolaan database yang aman.</p>
+          <a href="#" style="margin-top:26px; display:inline-flex; align-items:center; gap:8px; font-size:15px; font-weight:700; color:#9db8ff; text-decoration:none; align-self:flex-start; border-bottom:1px solid transparent; transition:border-color .2s, gap .2s;" style-hover="border-color:#9db8ff; gap:12px;">Read case study <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PORTFOLIO GRID ===== -->
+    <section id="blog" style="padding:88px 0 10px;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:36px;">
+        <div>
+          <span style="font-family:ui-monospace,Menlo,monospace; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#9db8ff;">Latest Work</span>
+          <h2 style="margin:10px 0 0; font-size:clamp(30px,4vw,48px); font-weight:800; letter-spacing:-0.025em; line-height:1.05;">Projects &amp; Portfolio</h2>
+        </div>
+        <p style="margin:0; max-width:380px; font-size:15px; line-height:1.6; color:var(--muted,#8A93A6); text-wrap:pretty;">Selection of products we design and build — from mobile apps to web platforms.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px;">
+        <sc-for list="{{ projects }}" as="project" hint-placeholder-count="6">
+          <a href="#" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border-radius:22px; overflow:hidden; border:1px solid var(--border,rgba(255,255,255,0.09)); background:var(--surface,rgba(255,255,255,0.035)); backdrop-filter:blur(12px); transition:transform .32s ease, border-color .32s ease, box-shadow .32s ease;" style-hover="transform:translateY(-6px); border-color:rgba(77,124,255,0.45); box-shadow:0 26px 60px -30px rgba(77,124,255,0.5);">
+            <div style="position:relative; aspect-ratio:16/10; background:repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0 12px, rgba(255,255,255,0.02) 12px 24px); display:flex; align-items:center; justify-content:center;">
+              <span style="font-family:ui-monospace,Menlo,monospace; font-size:12px; color:var(--muted,#8A93A6); letter-spacing:0.04em;">{{ project.label }}</span>
+              <span style="position:absolute; top:14px; left:14px; padding:5px 11px; border-radius:999px; font-size:11px; font-weight:700; color:#9db8ff; background:rgba(77,124,255,0.14); border:1px solid rgba(77,124,255,0.25);">{{ project.tag }}</span>
+            </div>
+            <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+              <h3 style="margin:0; font-size:18px; font-weight:700; letter-spacing:-0.01em; line-height:1.25;">{{ project.title }}</h3>
+              <p style="margin:11px 0 0; font-size:14px; line-height:1.6; color:var(--muted,#8A93A6); flex:1; text-wrap:pretty;">{{ project.desc }}</p>
+              <span style="margin-top:18px; display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:700; color:#9db8ff;">Read case study <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section id="about" style="padding:96px 0 10px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <span style="font-family:ui-monospace,Menlo,monospace; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#9db8ff;">People</span>
+        <h2 style="margin:10px 0 0; font-size:clamp(30px,4vw,48px); font-weight:800; letter-spacing:-0.025em;">Meet Our Team</h2>
+      </div>
+
+      <div id="gallery" style="max-width:560px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); border-radius:24px; overflow:hidden; border:1px solid var(--border,rgba(255,255,255,0.1)); background:var(--surface,rgba(255,255,255,0.035)); backdrop-filter:blur(14px); transition:border-color .3s, box-shadow .3s;" style-hover="border-color:rgba(167,139,250,0.45); box-shadow:0 30px 80px -40px rgba(167,139,250,0.45);">
+        <div style="position:relative; min-height:230px; background:repeating-linear-gradient(135deg, rgba(167,139,250,0.12) 0 14px, rgba(77,124,255,0.05) 14px 28px); display:flex; align-items:center; justify-content:center;">
+          <span style="font-family:ui-monospace,Menlo,monospace; font-size:12px; color:var(--muted,#8A93A6);">[ portrait ]</span>
+        </div>
+        <div style="padding:30px; display:flex; flex-direction:column; justify-content:center;">
+          <h3 style="margin:0; font-size:21px; font-weight:800; letter-spacing:-0.01em;">Muhammad Kholis</h3>
+          <span style="margin-top:5px; font-size:13px; font-weight:700; color:#9db8ff;">Founder &amp; Lead Developer</span>
+          <p style="margin:16px 0 0; font-size:14px; line-height:1.65; color:var(--muted,#8A93A6); text-wrap:pretty;">Flutter &amp; Web Developer yang passionate dalam membangun aplikasi modern. Mahasiswa Teknik Informatika PNL dengan fokus pada software development dan teknologi kreatif.</p>
+          <a href="#" style="margin-top:22px; align-self:flex-start; display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; text-decoration:none; font-size:14px; font-weight:700; color:var(--text,#E8ECF4); border:1px solid var(--border,rgba(255,255,255,0.14)); background:var(--surface2,rgba(255,255,255,0.05)); transition:border-color .2s, transform .2s;" style-hover="border-color:rgba(167,139,250,0.5); transform:translateY(-2px);">See Profile <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section style="padding:96px 0 10px;">
+      <div style="position:relative; overflow:hidden; border-radius:28px; border:1px solid var(--border,rgba(255,255,255,0.1)); background:linear-gradient(120deg, rgba(77,124,255,0.12), rgba(167,139,250,0.10)); padding:clamp(36px,5vw,64px); text-align:center;">
+        <div style="position:absolute; top:-120px; left:50%; transform:translateX(-50%); width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(77,124,255,0.30), transparent 65%); filter:blur(30px); pointer-events:none;"></div>
+        <div style="position:relative;">
+          <h2 style="margin:0; font-size:clamp(26px,3.4vw,42px); font-weight:800; letter-spacing:-0.025em; line-height:1.12; text-wrap:balance;">Subscribe to Parzello Tech Newsletter</h2>
+          <p style="margin:16px auto 0; max-width:520px; font-size:16px; line-height:1.65; color:var(--muted,#8A93A6); text-wrap:pretty;">Dapatkan update terbaru seputar inovasi digital dan solusi teknologi dari kami.</p>
+
+          <sc-if value="{{ subscribed }}" hint-placeholder-val="{{ false }}">
+            <div style="margin:30px auto 0; display:inline-flex; align-items:center; gap:10px; padding:14px 24px; border-radius:999px; background:rgba(52,211,153,0.14); border:1px solid rgba(52,211,153,0.4); color:#6ee7b7; font-weight:700; font-size:15px;">✓ You're subscribed. Thanks!</div>
+          </sc-if>
+          <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
+            <form onSubmit="{{ onSubscribe }}" style="margin:30px auto 0; max-width:480px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+              <input type="email" required value="{{ email }}" onChange="{{ onEmail }}" placeholder="you@email.com" style="flex:1; min-width:200px; padding:15px 20px; border-radius:999px; border:1px solid var(--border,rgba(255,255,255,0.14)); background:var(--bg2,rgba(255,255,255,0.04)); color:var(--text,#E8ECF4); font-size:15px; font-family:inherit; outline:none; transition:border-color .2s;" style-focus="border-color:#4D7CFF;">
+              <button type="submit" style="padding:15px 28px; border-radius:999px; cursor:pointer; font-size:15px; font-weight:700; color:var(--text,#E8ECF4); background:var(--surface,rgba(255,255,255,0.06)); border:1px solid rgba(167,139,250,0.55); transition:transform .2s, border-color .2s, background .2s;" style-hover="transform:translateY(-2px); border-color:#A78BFA; background:rgba(167,139,250,0.14);">Subscribe</button>
+            </form>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer style="padding:64px 0 50px; margin-top:60px; border-top:1px solid var(--border,rgba(255,255,255,0.08));">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:14px; max-width:640px;">
+          <img src="assets/parzello-logo.png" alt="Parzello" style="width:40px; height:40px; object-fit:contain; flex:none;">
+          <p style="margin:0; font-size:13.5px; line-height:1.6; color:var(--muted,#8A93A6); text-wrap:pretty;">© 2026 / Parzello Tech — Startup &amp; Digital Agency: Solusi Digital Inovatif untuk Pertumbuhan Bisnis Anda.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <a href="#" aria-label="Social" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid var(--border,rgba(255,255,255,0.12)); background:var(--surface,rgba(255,255,255,0.04)); color:var(--muted,#8A93A6); text-decoration:none; font-size:14px; font-weight:700; transition:border-color .2s, color .2s, transform .2s;" style-hover="border-color:rgba(77,124,255,0.5); color:#9db8ff; transform:translateY(-2px);">in</a>
+          <a href="#" aria-label="Social" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid var(--border,rgba(255,255,255,0.12)); background:var(--surface,rgba(255,255,255,0.04)); color:var(--muted,#8A93A6); text-decoration:none; font-size:14px; font-weight:700; transition:border-color .2s, color .2s, transform .2s;" style-hover="border-color:rgba(77,124,255,0.5); color:#9db8ff; transform:translateY(-2px);">X</a>
+          <a href="#" aria-label="Social" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid var(--border,rgba(255,255,255,0.12)); background:var(--surface,rgba(255,255,255,0.04)); color:var(--muted,#8A93A6); text-decoration:none; font-size:14px; font-weight:700; transition:border-color .2s, color .2s, transform .2s;" style-hover="border-color:rgba(77,124,255,0.5); color:#9db8ff; transform:translateY(-2px);">gh</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { theme: 'dark', time: '--:--:--', email: '', subscribed: false };
+
+  componentDidMount() {
+    this.tick();
+    this._t = setInterval(() => this.tick(), 1000);
+  }
+  componentWillUnmount() { if (this._t) clearInterval(this._t); }
+
+  tick() {
+    try {
+      const time = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit',
+        second: '2-digit', hour12: false
+      }).format(new Date());
+      this.setState({ time });
+    } catch (e) {}
+  }
+
+  renderVals() {
+    const dark = this.state.theme === 'dark';
+    const pal = dark ? {
+      '--bg': '#0B0F19', '--bg2': 'rgba(255,255,255,0.04)', '--text': '#E8ECF4',
+      '--muted': '#8A93A6', '--surface': 'rgba(255,255,255,0.04)',
+      '--surface2': 'rgba(255,255,255,0.06)', '--border': 'rgba(255,255,255,0.09)',
+      '--glass': 'rgba(16,21,34,0.62)'
+    } : {
+      '--bg': '#EEF1F8', '--bg2': '#FFFFFF', '--text': '#10131C',
+      '--muted': '#5A6478', '--surface': 'rgba(16,19,28,0.03)',
+      '--surface2': 'rgba(16,19,28,0.05)', '--border': 'rgba(16,19,28,0.10)',
+      '--glass': 'rgba(255,255,255,0.7)'
+    };
+
+    const projects = [
+      { title: 'E-Konsul — Digital Consultation Platform', tag: 'Web Platform', label: '[ e-konsul · web ]',
+        desc: 'Platform konsultasi digital yang memudahkan mahasiswa dan dosen untuk terhubung secara online melalui antarmuka modern, fitur chat real-time, serta sistem manajemen jadwal dan bimbingan yang efisien.' },
+      { title: 'Ticzy — Productivity & Finance Tracker', tag: 'Mobile App', label: '[ ticzy · mobile ]',
+        desc: 'Aplikasi pengelola keuangan pribadi dan produktivitas harian yang dilengkapi fitur To-Do, penjadwal, pencatatan transaksi, dan statistik finansial.' },
+      { title: 'Centrepoint — UKM POLICY Management App', tag: 'Flutter · Firebase', label: '[ centrepoint · app ]',
+        desc: 'Aplikasi mobile berbasis Flutter dan Firebase yang digunakan untuk sistem absensi digital dan manajemen keorganisasian di UKM Polytechnic Linux Community (POLICY).' },
+      { title: 'UKM-POLICY — Official Website', tag: 'Website', label: '[ ukm-policy · web ]',
+        desc: 'Situs web resmi untuk UKM Polytechnic Linux Community dengan konten dinamis dan responsif, dikembangkan untuk menjadi pusat informasi bagi mahasiswa.' },
+      { title: 'EMTER — Emergency Center Application', tag: 'Mobile App', label: '[ emter · mobile ]',
+        desc: 'Aplikasi tanggap darurat yang dilengkapi fitur chat real-time, peta lokasi, dan panggilan cepat untuk memberikan bantuan segera dalam situasi kritis.' },
+      { title: 'Personal Portfolio — Digital Identity', tag: 'Next.js', label: '[ portfolio · web ]',
+        desc: 'Website portofolio pribadi yang dibangun menggunakan Next.js dan TailwindCSS untuk menampilkan profil, keahlian, dan karya terbaik secara profesional.' },
+      { title: 'Sipaling Delivery — Modern UI/UX Delivery App', tag: 'UI/UX · Flutter', label: '[ sipaling · mobile ]',
+        desc: 'Project aplikasi mobile pertama yang berfokus pada desain UI/UX modern dengan menggunakan kerangka kerja Flutter, menghadirkan pengalaman belanja yang futuristik.' }
+    ];
+
+    return {
+      rootStyle: pal,
+      time: this.state.time,
+      toggleSpin: dark ? 'transform:rotate(0deg)' : 'transform:rotate(180deg)',
+      toggleTheme: () => this.setState(s => ({ theme: s.theme === 'dark' ? 'light' : 'dark' })),
+      projects,
+      email: this.state.email,
+      subscribed: this.state.subscribed,
+      notSubscribed: !this.state.subscribed,
+      onEmail: (e) => this.setState({ email: e.target.value }),
+      onSubscribe: (e) => { e.preventDefault(); this.setState({ subscribed: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

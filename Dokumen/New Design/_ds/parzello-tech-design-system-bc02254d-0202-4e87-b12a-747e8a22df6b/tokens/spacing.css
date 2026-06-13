@@ -1,0 +1,38 @@
+/* Parzello Tech — Spacing, radii & sizing tokens
+   The post system is built on a 1080 x 1350 canvas (Instagram 4:5) and a
+   1080 x 1920 canvas (Reels 9:16) with a generous ~70px outer margin. */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-18: 70px;   /* canvas outer margin */
+  --space-20: 80px;
+
+  /* ---- Radii ---- */
+  --radius-pill: 60px;   /* footer / header capsule pills */
+  --radius-badge: 20px;  /* TECH UPDATE-style badges */
+  --radius-glass: 74px;  /* large glass content containers */
+  --radius-card: 28px;   /* media / image cards inside posts */
+  --radius-sm: 12px;
+  --radius-md: 18px;
+
+  /* ---- Canvas dimensions ---- */
+  --canvas-post-w: 1080px;
+  --canvas-post-h: 1350px;
+  --canvas-reels-w: 1080px;
+  --canvas-reels-h: 1920px;
+  --canvas-margin: 70px;
+
+  /* ---- Control heights ---- */
+  --pill-h: 55px;
+  --badge-h: 65px;
+}

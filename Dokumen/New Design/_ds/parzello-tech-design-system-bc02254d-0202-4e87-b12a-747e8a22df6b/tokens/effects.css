@@ -1,0 +1,60 @@
+/* Parzello Tech — Effects: glass, shadows, blur, glow
+   The defining visual motif is GLASSMORPHISM on black: faintly-filled
+   panels with a heavy backdrop blur, a hairline inner stroke, and a bright
+   "top-light" bar across the upper edge. */
+
+:root {
+  /* ---- Backdrop blur strengths ---- */
+  --blur-glass: blur(90px);    /* @kind other */ /* large content glass containers */
+  --blur-pill: blur(200px);    /* @kind other */ /* small capsule pills (frosted) */
+  --blur-badge: blur(60px);    /* @kind other */ /* solid-tint badges */
+  --blur-text: blur(30px);     /* @kind other */ /* subtle frosting behind headlines */
+
+  /* ---- Strokes (rendered as inset box-shadow so they sit inside radius) ---- */
+  --stroke-glass: inset 0 0 0 1px rgba(255,255,255,0.5);
+  --stroke-glass-soft: inset 0 0 0 1px rgba(255,255,255,0.18);
+
+  /* ---- Glows ---- */
+  --glow-soft-white: 0 0 250px 120px rgba(255,255,255,0.05);
+  --glow-purple: 0 0 160px 40px rgba(108,36,254,0.45);
+  --glow-magenta: 0 0 120px 30px rgba(251,4,176,0.35);
+
+  /* ---- Elevation shadows (used rarely; brand prefers glow over drop shadow) ---- */
+  --shadow-card: 0 24px 80px rgba(0,0,0,0.55);
+  --shadow-pop: 0 8px 30px rgba(0,0,0,0.4);
+
+  /* ---- Protection gradients (legibility scrims over imagery) ---- */
+  --scrim-bottom: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 22%, rgba(0,0,0,0.92) 100%); /* @kind color */
+  --scrim-vertical: linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 49%, #000 99%); /* @kind color */
+
+  /* ---- Motion ---- */
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);  /* @kind other */ /* springy ease-out */
+  --dur-fast: 140ms;  /* @kind other */
+  --dur-base: 240ms;  /* @kind other */
+  --dur-slow: 420ms;  /* @kind other */
+}
+
+/* ---- Reusable composite: the brand "glass card" ----
+   Apply .prz-glass to get the signature frosted panel.
+   Wrap with a ::before top-light if you want the bright bar. */
+.prz-glass {
+  background: var(--prz-glass-fill, rgba(255,255,255,0.01));
+  -webkit-backdrop-filter: var(--blur-glass);
+  backdrop-filter: var(--blur-glass);
+  border-radius: var(--radius-glass);
+  box-shadow: var(--stroke-glass-soft);
+  position: relative;
+}
+.prz-glass--toplight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 8px;
+  background: var(--prz-toplight-white, rgba(255,255,255,0.5));
+  border-radius: 0 0 8px 8px;
+}
+.prz-glass--toplight-purple::before {
+  background: var(--prz-toplight-purple, rgba(108,36,254,0.5));
+}
