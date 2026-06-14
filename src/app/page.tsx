@@ -70,7 +70,7 @@ export default function Home() {
                             </RevealFx>
                             <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center">
                                 <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l" align="center" style={{ maxWidth: "640px" }}>
-                                    Kami adalah startup sekaligus digital agency yang berdedikasi membangun aplikasi modern (web/mobile) dan otomatisasi cerdas yang membantu bisnis Anda tumbuh lebih cepat.
+                                    {home.subline}
                                 </Text>
                             </RevealFx>
                         </Column>

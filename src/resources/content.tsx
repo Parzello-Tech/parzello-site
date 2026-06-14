@@ -47,8 +47,8 @@ const home: Home = {
     path: "/",
     image: "/images/og/home.jpg",
     label: "Home",
-    title: "Parzello Tech | Digital Solutions for Your Business Growth",
-    description: "Parzello Tech adalah startup sekaligus digital agency yang berfokus pada pengembangan aplikasi dan solusi digital yang intuitif, efisien, dan relevan untuk kehidupan modern.",
+    title: "Parzello Tech | Solusi Web, Mobile & ERP Enterprise",
+    description: "Kami membangun aplikasi mobile, sistem bisnis terintegrasi, dan otomatisasi workflow dari POS ritel hingga ERP perusahaan.",
     headline: <>Digital Solutions for Your Business Growth</>,
     featured: {
         display: true,
@@ -56,16 +56,15 @@ const home: Home = {
             <Row gap="12" vertical="center">
                 <strong className="ml-4">Parzello Tech</strong> <Line background="brand-alpha-strong" vert height="20" />
                 <Text marginRight="4" onBackground="brand-medium">
-                    Latest Project
+                    Latest Product: ZelloPOS
                 </Text>
             </Row>
         ),
-        href: "/work/e-konsul-digital-consultation-platform",
+        href: "/apps/zellopos",
     },
     subline: (
         <>
-            <b>Powerful Apps. For Everyone.</b><br/>
-            Technology should be accessible. Simple apps that empower your everyday life.
+            Sebagai <b>Product Studio & Digital Agency</b>, kami tidak hanya merancang sistem untuk klien, tetapi juga menguji dan merilis produk kami sendiri seperti ZelloPOS untuk memvalidasi keandalannya di lapangan.
         </>
     ),
 };
