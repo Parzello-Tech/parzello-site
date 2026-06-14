@@ -167,6 +167,19 @@ export default function About() {
                                     </Column>
                                 ))}
                             </Column>
+                            {/* ===== TESTIMONY & TRUST ===== */}
+                            <Column fillWidth gap="16" padding="24" border="neutral-alpha-medium" radius="l" background="neutral-alpha-weak" marginBottom="40" style={{ borderLeft: "4px solid var(--brand-solid)" }}>
+                                <Text variant="body-default-m" style={{ fontStyle: "italic" }} onBackground="neutral-strong">
+                                    "Sistem ERP yang dibangun oleh Parzello Tech sangat mempermudah pemantauan hasil produksi kelapa sawit dan logistik harian kami. Semua data kini terintegrasi secara real-time dan transparan."
+                                </Text>
+                                <Row gap="12" vertical="center" marginTop="8">
+                                    <Avatar src="/images/parzello.png" size="xs" />
+                                    <Column>
+                                        <Text variant="label-strong-s">PT Semadam</Text>
+                                        <Text variant="body-default-xs" onBackground="neutral-weak">Perkebunan &amp; Pengolahan Kelapa Sawit</Text>
+                                    </Column>
+                                </Row>
+                            </Column>
                         </>
                     )}
 
@@ -227,6 +240,30 @@ export default function About() {
                             </Column>
                         </>
                     )}
+                    {/* ===== CONTACT & CTA SECTION ===== */}
+                    <Heading as="h2" id="Contact" variant="display-strong-s" marginTop="xl" marginBottom="m">
+                        Hubungi Kami
+                    </Heading>
+                    <Column fillWidth gap="16" padding="24" border="neutral-alpha-medium" radius="l" background="surface" marginBottom="xl">
+                        <Text variant="body-default-m" onBackground="neutral-weak">
+                            Apakah Anda memiliki proyek yang ingin didiskusikan atau ingin berkonsultasi mengenai solusi digital bisnis Anda? Hubungi kami langsung, kami biasanya membalas pesan dalam waktu 1x24 jam.
+                        </Text>
+                        <Row gap="16" wrap vertical="center" marginTop="8">
+                            <Button data-border="rounded" href={`https://wa.me/6285161787501?text=${encodeURIComponent("Halo Tim *Parzello Tech*, saya ingin berkonsultasi mengenai proyek.")}`} target="_blank" rel="noopener noreferrer" variant="primary" size="m" suffixIcon="arrowRight">
+                                Mulai Konsultasi Gratis
+                            </Button>
+                            <Button data-border="rounded" href="mailto:parzello.dev@gmail.com" variant="secondary" size="m" prefixIcon="email">
+                                Kirim Email
+                            </Button>
+                        </Row>
+                        <Row gap="24" wrap marginTop="12" textVariant="body-default-s">
+                            {social.map((item) => item.link && (
+                                <a key={item.name} href={item.link} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "4px", color: "var(--neutral-on-background-weak)", textDecoration: "none" }} className="hover-opacity">
+                                    {item.name} <Icon name="arrowUpRight" size="xs" />
+                                </a>
+                            ))}
+                        </Row>
+                    </Column>
                 </Column>
             </Row>
         </Column>

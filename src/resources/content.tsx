@@ -74,7 +74,7 @@ const about: About = {
     path: "/about",
     label: "About",
     title: `About – Parzello Tech`,
-    description: `Menjadi pemimpin dalam inovasi digital yang menciptakan solusi teknologi berdampak positif, praktis, dan scalable untuk masyarakat dan industri.`,
+    description: "Parzello Tech membangun aplikasi mobile dan sistem bisnis untuk UMKM hingga perusahaan — dari POS ritel sampai ERP terintegrasi.",
     tableOfContent: {
         display: true,
         subItems: false,
@@ -90,7 +90,9 @@ const about: About = {
         display: true,
         title: "Introduction",
         description: <>
-            Parzello Tech adalah startup sekaligus digital agency yang berfokus pada pengembangan aplikasi dan solusi digital yang intuitif, efisien, dan relevan untuk kehidupan modern. Kami menggabungkan semangat inovasi yang fleksibel dengan ketepatan serta keandalan layanan profesional untuk menghadirkan solusi teknologi yang berdampak positif, praktis, dan skalabel bagi masyarakat dan industri.
+            <b>Parzello Tech membangun aplikasi mobile dan sistem bisnis untuk UMKM hingga perusahaan — dari POS ritel sampai ERP terintegrasi.</b>
+            <br/><br/>
+            Sebagai <b>Product Studio & Digital Agency</b> (berdiri sejak 2024 di Kota Langsa), kami tidak hanya membangun untuk klien — kami merancang, menguji, dan merilis produk kami sendiri. ZelloPOS adalah bukti nyata bahwa solusi teknologi yang kami kirimkan telah teruji keandalannya di lapangan, menggabungkan kecepatan inovasi produk mandiri dengan profesionalisme pengerjaan proyek enterprise.
         </>,
     },
     work: {
@@ -98,42 +100,22 @@ const about: About = {
         title: "Projects & Experience",
         experiences: [
             {
-                company: "Ticzy App",
-                timeframe: "2025 - Present",
-                role: "Product Management & Core Dev",
+                company: "ZelloPOS",
+                timeframe: "2026",
+                role: "In-house Digital Product",
                 achievements: [
-                    <>Mengembangkan aplikasi manajemen produktivitas harian dengan fitur To-Do List, Finance Tracker, dan Daily Journal.</>,
-                    <>Mengintegrasikan sistem sinkronisasi cloud menggunakan Supabase dan penyimpanan lokal SQLite.</>
+                    <><b>Masalah:</b> UMKM ritel sering kehilangan penjualan saat internet terputus dan kesulitan melacak inventaris stok secara manual.</>,
+                    <><b>Solusi:</b> ZelloPOS menyediakan mode transaksi offline penuh agar operasional kasir tetap berjalan tanpa koneksi, dikombinasikan dengan sinkronisasi inventaris real-time terotomatisasi untuk meminimalkan selisih stok.</>
                 ],
                 images: [],
             },
             {
-                company: "Pentest Mobile",
-                timeframe: "2025 - 2026",
-                role: "Mobile Developer (Diskominsa Aceh)",
+                company: "ERP PT Semadam",
+                timeframe: "2026",
+                role: "Enterprise Software Solution",
                 achievements: [
-                    <>Membangun aplikasi monitoring hasil penetration testing untuk kebutuhan keamanan siber pemerintah Aceh.</>,
-                    <>Fokus pada visualisasi data temuan celah keamanan secara real-time dan manajemen laporan.</>
-                ],
-                images: [],
-            },
-            {
-                company: "E-Konsul",
-                timeframe: "2024 - 2025",
-                role: "Lead Fullstack Developer",
-                achievements: [
-                    <>Platform konsultasi digital yang menghubungkan mahasiswa dan dosen di Politeknik Negeri Lhokseumawe.</>,
-                    <>Dilengkapi fitur chat real-time via Firebase dan sistem penjadwalan bimbingan yang efisien.</>
-                ],
-                images: [],
-            },
-            {
-                company: "Centrepoint",
-                timeframe: "2024",
-                role: "Mobile Developer (UKM POLICY)",
-                achievements: [
-                    <>Digitalisasi sistem absensi dan manajemen organisasi UKM POLICY berbasis QR Code dan Geofencing.</>,
-                    <>Meningkatkan transparansi dan kedisiplinan anggota melalui sistem pencatatan otomatis.</>
+                    <><b>Masalah:</b> Proses pencatatan logistik kelapa sawit dan pembukuan arus kas yang terfragmentasi menghambat efisiensi operasional.</>,
+                    <><b>Solusi:</b> Membangun sistem ERP kustom berbasis web terintegrasi yang menyatukan logistik gudang, pencatatan produksi harian, pembukuan keuangan otomatis, serta dasbor analitik real-time.</>
                 ],
                 images: [],
             },
@@ -141,15 +123,15 @@ const about: About = {
     },
     studies: {
         display: true, // set to false to hide this section
-        title: "Team Background",
+        title: "Mission & Values",
         institutions: [
             {
-                name: "Politeknik Negeri Lhokseumawe",
-                description: <>D3 Teknik Informatika (2022 - Sekarang). IPK: 3.53 / 4.00. Aktif dalam organisasi teknologi kampus (UKM POLICY).</>,
+                name: "Visi Kami",
+                description: <>Menjadi penyedia solusi digital terpercaya yang menggabungkan inovasi desain dan keunggulan rekayasa teknologi untuk membantu transformasi bisnis di era digital.</>,
             },
             {
-                name: "SMK Negeri 2 Kota Langsa",
-                description: <>Rekayasa Perangkat Lunak (2019 - 2022). Fokus pada dasar-dasar pemrograman web dan mobile development.</>,
+                name: "Nilai Utama",
+                description: <>Fokus pada pengalaman pengguna (user experience), keandalan sistem, penulisan kode yang bersih dan terstruktur (clean code), serta komunikasi transparan dengan mitra.</>,
             },
         ],
     },
@@ -158,35 +140,35 @@ const about: About = {
         title: "Technical Skills",
         skills: [
             {
-                title: "Programming & Frameworks",
-                description: <>Mahir dalam pengembangan mobile dan web menggunakan teknologi modern untuk aplikasi yang cepat dan responsif.</>,
+                title: "Mobile App Development",
+                description: <>Merancang dan mengembangkan aplikasi mobile lintas platform (Android, iOS, tablet) dengan performa tinggi dan antarmuka ergonomis.</>,
                 tags: [
                     { name: "Flutter", icon: "flutter" },
                     { name: "Dart", icon: "flutter" },
-                    { name: "Next.js", icon: "nextjs" },
-                    { name: "PHP", icon: "php" },
-                    { name: "Python", icon: "python" },
-                    { name: "JavaScript", icon: "javascript" },
                 ],
             },
             {
-                title: "Design & Multimedia",
-                description: <>Memiliki minat kuat dalam teknologi kreatif dan desain visual untuk menciptakan antarmuka yang indah.</>,
+                title: "Web & Backend Engineering",
+                description: <>Membangun website modern, sistem logistik, RESTful API, dan arsitektur database cloud/serverless yang andal dan aman.</>,
+                tags: [
+                    { name: "Next.js", icon: "nextjs" },
+                    { name: "JavaScript", icon: "javascript" },
+                    { name: "PHP", icon: "php" },
+                    { name: "Python", icon: "python" },
+                    { name: "Firebase", icon: "firebase" },
+                    { name: "Supabase", icon: "supabase" },
+                    { name: "SQLite", icon: "sqlite" },
+                ],
+            },
+            {
+                title: "UI/UX & Multimedia Design",
+                description: <>Menerjemahkan kebutuhan bisnis menjadi wireframe fungsional, prototipe interaktif di Figma, serta aset multimedia 3D/visual.</>,
                 tags: [
                     { name: "Figma", icon: "figma" },
                     { name: "Photoshop", icon: "photoshop" },
                     { name: "Premiere Pro", icon: "premiere" },
                     { name: "Blender", icon: "blender" },
                     { name: "Canva", icon: "canva" },
-                ],
-            },
-            {
-                title: "Backend & Database",
-                description: <>Berpengalaman dalam mengelola data menggunakan solusi cloud dan penyimpanan lokal.</>,
-                tags: [
-                    { name: "Firebase", icon: "firebase" },
-                    { name: "Supabase", icon: "supabase" },
-                    { name: "SQLite", icon: "sqlite" },
                 ],
             },
         ],
