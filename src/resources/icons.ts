@@ -6,7 +6,7 @@ import { PiHouseDuotone, PiUserCircleDuotone, PiGridFourDuotone, PiBookBookmarkD
 
 import { SiJavascript, SiNextdotjs, SiFigma, SiSupabase, SiTypescript, SiFirebase, SiAdobephotoshop, SiAdobepremierepro, SiBlender, SiCanva, SiPhp, SiPython, SiSqlite, SiCss3, SiHtml5 } from "react-icons/si";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaInstagram, FaFlutter } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaInstagram, FaFlutter, FaGooglePlay } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
     arrowUpRight: HiArrowUpRight,
@@ -16,6 +16,7 @@ export const iconLibrary: Record<string, IconType> = {
     person: PiUserCircleDuotone,
     grid: PiGridFourDuotone,
     apps: PiAppWindowDuotone,
+    googleplay: FaGooglePlay,
     book: PiBookBookmarkDuotone,
     openLink: HiOutlineLink,
     calendar: HiCalendarDays,
