@@ -66,10 +66,10 @@ const style: StyleConfig = {
     theme: "system", // dark | light | system
     neutral: "gray", // sand | gray | slate | custom
     brand: "indigo", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-    accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+    accent: "violet", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
     solid: "contrast", // color | contrast
     solidStyle: "flat", // flat | plastic
-    border: "playful", // rounded | playful | conservative
+    border: "rounded", // rounded | playful | conservative
     surface: "translucent", // filled | translucent
     transition: "all", // all | micro | macro
     scaling: "100", // 90 | 95 | 100 | 105 | 110
