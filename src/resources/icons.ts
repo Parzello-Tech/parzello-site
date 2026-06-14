@@ -2,7 +2,7 @@ import { IconType } from "react-icons";
 
 import { HiArrowUpRight, HiOutlineLink, HiArrowTopRightOnSquare, HiEnvelope, HiCalendarDays, HiArrowRight, HiOutlineEye, HiOutlineEyeSlash, HiOutlineDocument, HiOutlineGlobeAsiaAustralia, HiOutlineRocketLaunch } from "react-icons/hi2";
 
-import { PiHouseDuotone, PiUserCircleDuotone, PiGridFourDuotone, PiBookBookmarkDuotone, PiImageDuotone } from "react-icons/pi";
+import { PiHouseDuotone, PiUserCircleDuotone, PiGridFourDuotone, PiBookBookmarkDuotone, PiImageDuotone, PiAppWindowDuotone } from "react-icons/pi";
 
 import { SiJavascript, SiNextdotjs, SiFigma, SiSupabase, SiTypescript, SiFirebase, SiAdobephotoshop, SiAdobepremierepro, SiBlender, SiCanva, SiPhp, SiPython, SiSqlite, SiCss3, SiHtml5 } from "react-icons/si";
 
@@ -15,6 +15,7 @@ export const iconLibrary: Record<string, IconType> = {
     globe: HiOutlineGlobeAsiaAustralia,
     person: PiUserCircleDuotone,
     grid: PiGridFourDuotone,
+    apps: PiAppWindowDuotone,
     book: PiBookBookmarkDuotone,
     openLink: HiOutlineLink,
     calendar: HiCalendarDays,

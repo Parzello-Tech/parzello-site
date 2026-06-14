@@ -222,6 +222,13 @@ export interface Blog extends BasePageConfig {}
 export interface Work extends BasePageConfig {}
 
 /**
+ * Apps page configuration.
+ * @description Configuration for the Apps page, including metadata and navigation label.
+ * Items are authored as MDX files in `src/app/apps/items`.
+ */
+export interface Apps extends BasePageConfig {}
+
+/**
  * Gallery page configuration.
  * @description Configuration for the Gallery page, including metadata, navigation label, and image list.
  */

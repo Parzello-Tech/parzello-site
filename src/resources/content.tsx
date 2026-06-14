@@ -1,4 +1,4 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work, Team } from "@/types";
+import { About, Apps, Blog, Gallery, Home, Newsletter, Person, Social, Work, Team } from "@/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -211,6 +211,15 @@ const work: Work = {
     // All projects will be listed on the /home and /work routes
 };
 
+const apps: Apps = {
+    path: "/apps",
+    label: "Apps",
+    title: `Apps – ${person.name}`,
+    description: `Aplikasi dan produk digital yang dibangun dan dirilis oleh ${person.name}`,
+    // Create new app entries by adding a new .mdx file to app/apps/items
+    // All items will be listed on the /apps route
+};
+
 const gallery: Gallery = {
     path: "/gallery",
     label: "Gallery",
@@ -242,4 +251,4 @@ const team: Team = {
     ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery, team };
+export { person, social, newsletter, home, about, blog, work, apps, gallery, team };
