@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
+import { Fade, Flex, Line, Row, ToggleButton, Avatar } from "@once-ui-system/core";
 
 import { routes, display, person, about, blog, work, apps, gallery } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
@@ -86,6 +86,10 @@ export const Header = () => {
             zIndex={1}
           >
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
+              <a href="/" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>
+                <Avatar src={person.avatar} size="m" style={{ marginLeft: "6px", marginRight: "6px", cursor: "pointer" }} />
+              </a>
+              <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/"] && (
                 <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
               )}
