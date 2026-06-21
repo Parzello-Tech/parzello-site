@@ -23,6 +23,7 @@ type Metadata = {
   /** Per-page brand/primary color: an Once UI scheme name
    * (blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan). */
   accent?: string;
+  privacyPolicy?: boolean;
 };
 
 import { notFound } from "next/navigation";
@@ -55,6 +56,7 @@ function readMDXFile(filePath: string) {
     website: data.website || "",
     mockup: data.mockup || "",
     accent: data.accent || "",
+    privacyPolicy: data.privacyPolicy || false,
   };
 
   return { metadata, content };

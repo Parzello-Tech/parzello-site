@@ -1,0 +1,63 @@
+---
+title: "Centrepoint — UKM POLICY Mobile App"
+publishedAt: "2024-11-20"
+summary: "Aplikasi mobile resmi UKM POLICY berbasis Flutter dengan desain Neo-Brutalism — manajemen absensi QR, keuangan kas, poin partisipasi, berita, dan panel admin dalam satu platform."
+tag: "Mobile App"
+accent: "blue"
+images:
+    - "/images/projects/centrepoint/centrepoint_banner.png"
+team:
+    - name: "Muhammad Kholis"
+      role: "Mobile Developer"
+      avatar: "/images/team/muhammad_kholis2.jpg"
+      linkedIn: "https://www.linkedin.com/in/muhammad-kholis-51ba57195/"
+link: ""
+privacyPolicy: true
+---
+
+## Overview
+
+**Centrepoint** adalah aplikasi mobile resmi **UKM POLICY** (Unit Kegiatan Mahasiswa Polytechnic Linux Community) yang dibangun dengan Flutter. Aplikasi ini hadir sebagai platform terpusat untuk seluruh kebutuhan manajemen organisasi — dari absensi kegiatan, transparansi keuangan kas, sistem poin partisipasi, hingga panel administrasi pengurus.
+
+Didesain dengan bahasa visual **Neo-Brutalism** yang tegas dan modern: hard shadow, tipografi bold, dan tap feedback interaktif yang responsif.
+
+## Fitur Utama
+
+| Modul | Deskripsi |
+|---|---|
+| **Beranda** | Dashboard dengan carousel berita, kartu profil anggota, dan quick menu |
+| **Berita** | Daftar dan detail berita/pengumuman organisasi |
+| **Kegiatan** | Jadwal kegiatan, rapat, riwayat partisipasi, dan form pembuatan kegiatan |
+| **Absensi** | Check-in via scan QR Code dan riwayat absensi sekretariat |
+| **Uang Khas** | Saldo, status iuran anggota, dan riwayat transaksi keuangan |
+| **Poin** | Sistem poin partisipasi anggota |
+| **Anggota** | Direktori anggota aktif dan detail profil |
+| **Inbox** | Notifikasi dan pengumuman internal |
+| **OR** | Manajemen struktur organisasi |
+| **Admin Panel** | Verifikasi anggota, kelola kegiatan/berita/poin/keuangan, audit log, generate QR |
+| **Pengaturan** | Profil pengguna, notifikasi, dan informasi aplikasi |
+
+## Tech Stack
+
+-   **Flutter** (Dart SDK ^3.12.1) untuk aplikasi Android & iOS lintas platform.
+-   **Provider** `^6.1.2` untuk state management.
+-   **GoRouter** `^14.6.3` untuk navigasi deklaratif.
+-   **Firebase** sebagai backend: autentikasi, Cloud Firestore, dan Cloud Messaging.
+-   **Bricolage Grotesque** via Google Fonts sebagai tipografi utama.
+
+## Desain Sistem — Neo-Brutalism
+
+Centrepoint menggunakan design language Neo-Brutalism yang konsisten di seluruh komponen:
+
+-   **Hard shadow** dengan `offset: (4,4)`, blur radius 0, warna `#222222`.
+-   **Tap feedback** berupa translasi `(3,3)` dan shadow mengecil — memberikan efek tombol fisik.
+-   **AppBar floating** dengan margin 16px dan border-radius 16px.
+-   **BottomNavBar** berbentuk capsule pill yang mengambang 16px dari bawah layar.
+
+## Persyaratan
+
+-   **Package ID**: com.parzello.centrepoint
+-   **Kategori**: Organisasi / Produktivitas
+-   **Pengembang**: Parzello Tech untuk UKM POLICY
+-   **Platform**: Android & iOS (Flutter)
+-   **Flutter SDK**: >= 3.12.1

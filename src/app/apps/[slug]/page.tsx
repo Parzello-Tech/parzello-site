@@ -146,10 +146,29 @@ export default async function App({
     </Button>
   ) : null;
 
+  const privacyPolicyButton = post.metadata.privacyPolicy ? (
+    <Button
+      href={`/apps/privacy-policy/${post.slug}`}
+      variant="tertiary"
+      size="l"
+      weight="default"
+      prefixIcon="shield"
+    >
+      Privacy Policy
+    </Button>
+  ) : null;
+
   const ctaButtons = (
     <>
       {playstoreButton}
       {websiteButton}
+    </>
+  );
+  const heroButtons = (
+    <>
+      {playstoreButton}
+      {websiteButton}
+      {privacyPolicyButton}
     </>
   );
   const hasCta = Boolean(playstoreButton || websiteButton);
@@ -210,9 +229,9 @@ export default async function App({
               </Text>
             </Row>
           )}
-          {hasCta && (
+          {(hasCta || privacyPolicyButton) && (
             <Row gap="12" wrap vertical="center" paddingTop="8">
-              {ctaButtons}
+              {heroButtons}
             </Row>
           )}
         </Column>

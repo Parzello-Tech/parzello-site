@@ -1,6 +1,6 @@
 import { IconType } from "react-icons";
 
-import { HiArrowUpRight, HiOutlineLink, HiArrowTopRightOnSquare, HiEnvelope, HiCalendarDays, HiArrowRight, HiOutlineEye, HiOutlineEyeSlash, HiOutlineDocument, HiOutlineGlobeAsiaAustralia, HiOutlineRocketLaunch } from "react-icons/hi2";
+import { HiArrowUpRight, HiOutlineLink, HiArrowTopRightOnSquare, HiEnvelope, HiCalendarDays, HiArrowRight, HiOutlineEye, HiOutlineEyeSlash, HiOutlineDocument, HiOutlineGlobeAsiaAustralia, HiOutlineRocketLaunch, HiOutlineShieldCheck } from "react-icons/hi2";
 
 import { PiHouseDuotone, PiUserCircleDuotone, PiGridFourDuotone, PiBookBookmarkDuotone, PiImageDuotone, PiAppWindowDuotone } from "react-icons/pi";
 
@@ -33,6 +33,7 @@ export const iconLibrary: Record<string, IconType> = {
     arrowUpRightFromSquare: HiArrowTopRightOnSquare,
     document: HiOutlineDocument,
     rocket: HiOutlineRocketLaunch,
+    shield: HiOutlineShieldCheck,
     javascript: SiJavascript,
     nextjs: SiNextdotjs,
     supabase: SiSupabase,
